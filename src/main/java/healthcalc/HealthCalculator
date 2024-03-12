@@ -1,0 +1,28 @@
+package healthcalc;
+
+public class HealthCalculator implements HealthCalc {
+
+    public float idealWeight(int height, char gender) throws Exception {
+        float resultado;
+        
+        if(height <= 0){
+            throw new Exception("La altura proporcionada no es válida");
+        }
+        if(gender = 'w'){
+            resultado = (height - 100) - ((height - 150) / 2.5f);
+        }
+        if(gender = 'm'){
+            resultado = (height - 100) - ((height - 150) / 4f);
+        }
+        else
+        throw new Exception("El género proporcionado no es válido");
+
+        if(resultado <= 0){
+            throw new Exception("El resultado es negativo. Pruebe con otros datos.");
+        }
+        return resultado
+    }
+
+
+
+}

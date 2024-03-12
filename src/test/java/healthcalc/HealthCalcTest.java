@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -12,13 +13,21 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 @DisplayName("Tests para la calculadora de salud.")
 public class HealthCalcTest {
+	private HealthCalc obj;
+
 
 	@Test
 	@DisplayName("Esto es un test de ejemplo.")
 	public void bmi() {
 		assertEquals(true, true);
 	}
-	//Tests idealWeight
+
+	@BeforeEach
+	public void init() {
+		obj = new HealthCalculator();
+	}
+
+	//-------------------Tests idealWeight-------------------------------------------
 	
 	@ParameterizedTest
 	@CsvSource({ "'2'", "'*'", "'n'", "'_'", "7" })
@@ -54,18 +63,22 @@ public class HealthCalcTest {
 	@ParameterizedTest
     @CsvSource({ "120, 'm'", "100, 'w'", "190, 'm'", "157, 'w'" })
     @DisplayName("IW menor que altura ")
-    public void test_4_idealWeight_lessThanHeight(int height, char gender) {
-        double idealWeight = obj.idealWeight(height, gender);
-        assertTrue(idealWeight < height);
-    }
+    public void test_4_idealWeight_lessThanHeight(int height, char gender) throws Exception {
+		assertDoesNotThrow(() -> {
+		float resultado = obj.idealWeight(height, gender);
+        assertTrue(resultado < height);
+    });
+}
 
 	@ParameterizedTest
     @CsvSource({ "120, 'm'", "113, 'w'", "89, 'm'", "94, 'w'" })
     @DisplayName("IW menor o igual a height-100 para height<=150 cm")
-    public void test5_idealWeight_above150(int height, char gender) {
-        double idealWeight = obj.idealWeight(height, gender);
-        assertTrue(idealWeight <= height - 100);
-	}
+    public void test5_idealWeight_above150(int height, char gender) throws Exception {
+		assertDoesNotThrow(() -> {
+        float resultado = obj.idealWeight(height, gender);
+        assertTrue(resultado <= height - 100);
+	});
+}
 		@ParameterizedTest
 		@CsvSource({ "66, 'w'", "2, 'w'",
 				"83, 'm'", "50, 'm'" })
