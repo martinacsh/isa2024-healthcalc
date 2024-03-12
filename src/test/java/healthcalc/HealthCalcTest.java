@@ -62,7 +62,7 @@ public class HealthCalcTest {
 	@ParameterizedTest
     @CsvSource({ "120, 'm'", "113, 'w'", "89, 'm'", "94, 'w'" })
     @DisplayName("IW menor o igual a height-100 para height<=150 cm")
-    public void test5_idealWeight_Above150(int height, char gender) {
+    public void test5_idealWeight_above150(int height, char gender) {
         double idealWeight = obj.idealWeight(height, gender);
         assertTrue(idealWeight <= height - 100);
 	}
@@ -70,15 +70,79 @@ public class HealthCalcTest {
 		@CsvSource({ "66, 'w'", "2, 'w'",
 				"83, 'm'", "50, 'm'" })
 		@DisplayName("Alturas límite lanzan excepción")
-		public void test6_IdealWeight_heightThreshold(int height, char gender) throws Exception {
+		public void test6_idealWeight_heightThreshold(int height, char gender) throws Exception {
 			assertThrows(Exception.class, () -> {
 				obj.idealWeight(height, gender);
 			});
 		}
 
+		//---------------------Tests basalMetabolicRate------------------------------------
 
 
+		@ParameterizedTest
+		@CsvSource({ "'2'", "'*'", "'n'", "'_'", "7" })
+		@DisplayName("basalMR() argumento género no válido")
+		public void test1_basalMR_gender(char gender) throws Exception {
+			assertThrows(Exception.class, () -> {
+				obj.basalMetabolicRate(57, 173, gender, 24);
+			});
+		}
+
+		@ParameterizedTest
+	@CsvSource({ "-1, 'm'", "0, 'w'",
+			"-20, 'w'", "-1, 'w'", "0, 'm'" })
+	@DisplayName("basalMR() argumento altura no válido")
+	public void test2_basalMR_height(int height, char gender) throws Exception {
+		assertThrows(Exception.class, () -> {
+			obj.basalMetabolicRate(57, height, gender, 24);
+		});
+	}
+
+	@ParameterizedTest
+	@CsvSource({ "-3, 'w'", "-1, 'm'",
+			"0, 'w'" })
+	@DisplayName("basalMR() argumento peso no válido")
+	public void test3_basalMR_weight(int weight, char gender) throws Exception {
+		assertThrows(Exception.class, () -> {
+			obj.basalMetabolicRate(weight, 173, gender, 24);
+		});
+
+	}
+	@ParameterizedTest
+	@CsvSource({ "-35, 'w'", "-7, 'm'" })
+	@DisplayName("basalMR() argumento edad no válido")
+	public void test4_basalMRI_age(char gender, int age) throws Exception {
+		assertThrows(Exception.class, () -> {
+			obj.basalMetabolicRate(57, 173, gender, age);
+		});
+	}
+	@ParameterizedTest
+	@CsvSource({ "173, 'w', , 13", "165, 'w', 89, 78",
+			"50, 'm', 4, 1", "125, 'w', 45, 60", "1000, 'm', 343, 23" })
+	@DisplayName("basalMR() todos los argumentos correctos, no lanza exc")
+	public void test5_basalMR_correctArguments(int weight, int height, char gender, int age) throws Exception {
+		assertDoesNotThrow(() -> {
+			float result = obj.basalMetabolicRate(weight, height, gender, age);
+			assertTrue(result > 0);
+		});
+	}
+
+	@ParameterizedTest
+	@CsvSource({ "9, 1, 4", "3, 0, 3" })
+	@DisplayName("basalMR resultados negativos mujeres")
+	public void test6_basalMR_wNegative(int weight, int height, int age) throws Exception {
+		assertThrows(Exception.class, () -> {
+			obj.basalMetabolicRate(weight, height, 'w', age);
+		});
+	}
 
 
-	//Tests basalMetabolicRate
+	@ParameterizedTest
+	@CsvSource({ "57, 173, 24", "73, 169, 38" })
+	@DisplayName("basalMR() mismos argumentos para distintos géneros, m>w")
+	public void test7_basalMR_same_Arguments(int weight, int height, int age) throws Exception {
+		assertTrue(obj.basalMetabolicRate(weight, height, 'w', age) < obj.basalMetabolicRate(weight, height, 'm', age));
+
+	}
+
 }
