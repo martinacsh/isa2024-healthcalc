@@ -20,6 +20,8 @@ public interface HealthCalc {
 	 */
 	public float idealWeight(int height, char gender) throws Exception;
 	
+
+	
 	/**
 	 * Calculate the Basal Metabolic Rate (BMR) of a person with the following formula:
 	 * For men: BMR = 10 * weight + 6.25 * height - 5 * age + 5
