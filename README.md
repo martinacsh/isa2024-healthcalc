@@ -13,11 +13,17 @@
     5. Para alturas muy pequeñas, el método no debe devolver valores negativos (la fórmula proporciona éstos resultados si se introducen alturas menores o iguales a 67 en mujeres y 84 en hombres) En su lugar, lanzará una excepción con un mensaje que explique que la altura es demasiado pequeña.
 
 ###Tests metodo basalMetabolicRate
+
     1. La edad debe ser mayor a 0. En caso contrario, se lanzará una excepción que muestre un mensaje explicando el error.
+
     2. En caso de que el caracter introducido para definir el género sea distinto de 'm' o 'f', se debe lanzar una excepción que muestre un mensaje explicando el error.
+
     3. La altura debe ser mayor que 0, En caso contrario, se lanzará una excepción que muestre un mensaje explicando el error.
+
     4. El peso debe ser mayor que 0, En caso contrario, se lanzará una excepción que muestre un mensaje explicando el error.
+
     5. Si todos los parámetros tienen valores correctos, no debe saltar ninguna excepción y el valor devuelto por el método debe ser mayor que 0. Para valores muy pequeños en mujeres, es posible que la fórmula resulte en un valor negativo, en dicho caso, se lanzará una excepción.
+    
     6. El valor devuelto por este método será siempre menor para mujeres, en caso de que todos los argumentos a excepción del género sean equivalentes respectivamente.
 
 ![Registro commits]("C:\Users\marti\Downloads\registro_commits.png")
