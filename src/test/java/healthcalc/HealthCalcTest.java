@@ -25,7 +25,7 @@ public class HealthCalcTest {
 	@DisplayName("idealWeight() argumento género no válido")
 	public void test1_idealWeight_gender(char gender) throws Exception {
 		assertThrows(Exception.class, () -> {
-			obj.idealWeight(160, gender);
+			obj.idealWeight(173, gender);
 		});
 	}
 
@@ -41,8 +41,8 @@ public class HealthCalcTest {
 	}
 
 	@ParameterizedTest
-	@CsvSource({ "180, 'm'", "165, 'w'",
-			"84, 'm'", "67, 'w'", "1000, 'm'" })
+	@CsvSource({ "84, 'm'", "67, 'w'",
+			"187, 'm'", "173, 'w'"})
 	@DisplayName("idealWeight() argumentos válidos")
 	public void test3_IdealWeight_correctArguments(int height, char gender) throws Exception {
 		assertDoesNotThrow(() -> {
@@ -50,6 +50,31 @@ public class HealthCalcTest {
 			assertTrue(resultado > 0);
 		});
 	}
+
+	@ParameterizedTest
+    @CsvSource({ "120, 'm'", "100, 'w'", "190, 'm'", "157, 'w'" })
+    @DisplayName("IW menor que altura ")
+    public void test_4_idealWeight_lessThanHeight(int height, char gender) {
+        double idealWeight = obj.idealWeight(height, gender);
+        assertTrue(idealWeight < height);
+    }
+
+	@ParameterizedTest
+    @CsvSource({ "120, 'm'", "113, 'w'", "89, 'm'", "94, 'w'" })
+    @DisplayName("IW menor o igual a height-100 para height<=150 cm")
+    public void test5_idealWeight_Above150(int height, char gender) {
+        double idealWeight = obj.idealWeight(height, gender);
+        assertTrue(idealWeight <= height - 100);
+	}
+		@ParameterizedTest
+		@CsvSource({ "66, 'w'", "2, 'w'",
+				"83, 'm'", "50, 'm'" })
+		@DisplayName("Alturas límite lanzan excepción")
+		public void test6_IdealWeight_heightThreshold(int height, char gender) throws Exception {
+			assertThrows(Exception.class, () -> {
+				obj.idealWeight(height, gender);
+			});
+		}
 
 
 
