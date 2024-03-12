@@ -1,7 +1,7 @@
 # isa2024-healthcalc
 ##Health calculator
 
-###Tests para metodo idealWeight
+###Tests metodo idealWeight
     
     1. En caso de que el caracter introducido para definir el género sea distinto de 'm' o 'f', se debe lanzar una excepción que muestre un mensaje explicando el error.
     2. El argumento de la altura debe ser mayor que cero, en caso contrario, el método debe lanzar una excepción que muestre un mensaje explicando el error.
@@ -10,3 +10,11 @@
     4. El valor que devuelva este método debe cumplir IW < h. e
     En caso de que la altura sea mayor o igual a 150 cm, se debe cumplir IW <= (h-100), tanto para hombres comopara mujeres. Ésto no se cumple para alturas a partir de 550 para hombres y 400 para mujeres. Al ser valores que no se dan en un caso real, ésta "excepción" se considera trivial.
     5. Para alturas muy pequeñas, el método no debe devolver valores negativos (la fórmula proporciona éstos resultados si se introducen alturas menores o iguales a 66 en mujeres y 83 en hombres) En su lugar, lanzará una excepción con un mensaje que explique que la altura es demasiado pequeña.
+
+###Tests metodo basalMetabolicRate
+    1. La edad debe ser mayor a 0. En caso contrario, se lanzará una excepción que muestre un mensaje explicando el error.
+    2. En caso de que el caracter introducido para definir el género sea distinto de 'm' o 'f', se debe lanzar una excepción que muestre un mensaje explicando el error.
+    3. La altura debe ser mayor que 0, En caso contrario, se lanzará una excepción que muestre un mensaje explicando el error.
+    4. El peso debe ser mayor que 0, En caso contrario, se lanzará una excepción que muestre un mensaje explicando el error.
+    5. Si todos los parámetros tienen valores correctos, no debe saltar ninguna excepción y el valor devuelto por el método debe ser mayor que 0. Para valores muy pequeños en mujeres, es posible que la fórmula resulte en un valor negativo, en dicho caso, se lanzará una excepción.
+    6. El valor devuelto por este método será siempre menor para mujeres, en caso de que todos los argumentos a excepción del género sean equivalentes respectivamente.
