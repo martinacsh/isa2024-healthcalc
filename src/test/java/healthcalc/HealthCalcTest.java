@@ -16,12 +16,6 @@ public class HealthCalcTest {
 	private HealthCalc obj;
 
 
-	@Test
-	@DisplayName("Esto es un test de ejemplo.")
-	public void bmi() {
-		assertEquals(true, true);
-	}
-
 	@BeforeEach
 	public void init() {
 		obj = new HealthCalculator();
@@ -64,8 +58,8 @@ public class HealthCalcTest {
     @CsvSource({ "120, 'm'", "100, 'w'", "190, 'm'", "157, 'w'" })
     @DisplayName("IW menor que altura ")
     public void test_4_idealWeight_lessThanHeight(int height, char gender) throws Exception {
-		assertDoesNotThrow(() -> {
-		float resultado = obj.idealWeight(height, gender);
+		 assertDoesNotThrow(() -> {
+        float resultado = obj.idealWeight(height, gender);
         assertTrue(resultado < height);
     });
 }
