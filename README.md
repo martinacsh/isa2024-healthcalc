@@ -19,3 +19,5 @@
     4. El peso debe ser mayor que 0, En caso contrario, se lanzará una excepción que muestre un mensaje explicando el error.
     5. Si todos los parámetros tienen valores correctos, no debe saltar ninguna excepción y el valor devuelto por el método debe ser mayor que 0. Para valores muy pequeños en mujeres, es posible que la fórmula resulte en un valor negativo, en dicho caso, se lanzará una excepción.
     6. El valor devuelto por este método será siempre menor para mujeres, en caso de que todos los argumentos a excepción del género sean equivalentes respectivamente.
+
+![Registro commits]("C:\Users\marti\Downloads\registro_commits.png")
