@@ -26,4 +26,6 @@
 
     6. El valor devuelto por este método será siempre menor para mujeres, en caso de que todos los  argumentos a excepción del género sean equivalentes respectivamente.
 
+<img width="242" alt="registro_commits" src="https://github.com/martinacsh/isa2024-healthcalc/assets/160426861/3d57b48e-1a12-45b4-ad1c-13e962c53777">
+
 ![Registro commits]("C:\Users\marti\OneDrive\Documentos\Git\isa2024-healthcalc\registro_commits.png")
