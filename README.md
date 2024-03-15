@@ -1,7 +1,7 @@
 # isa2024-healthcalc
-##Health calculator
+## Health calculator
 
-###Tests metodo idealWeight
+### Tests metodo idealWeight
     
     1. En caso de que el caracter introducido para definir el género sea distinto de 'm' o 'f', se debe  lanzar una excepción que muestre un mensaje explicando el error.  
     2. El argumento de la altura debe ser mayor que cero, en caso contrario, el método debe lanzar una  excepción que muestre un mensaje explicando el error.  
@@ -12,7 +12,7 @@
     
     5. Para alturas muy pequeñas, el método no debe devolver valores negativos (la fórmula proporciona éstos  resultados si se introducen alturas menores o iguales a 67 en mujeres y 84 en hombres) En su  lugar, lanzará una excepción con un mensaje que explique que la altura es demasiado pequeña.
 
-###Tests metodo basalMetabolicRate
+### Tests metodo basalMetabolicRate
 
     1. La edad debe ser mayor a 0. En caso contrario, se lanzará una excepción que muestre un mensaje  explicando el error.
 
@@ -25,5 +25,6 @@
     5. Si todos los parámetros tienen valores correctos, no debe saltar ninguna excepción y el valor  devuelto por el método debe ser mayor que 0. Para valores muy pequeños en mujeres, es posible que la  fórmula resulte en un valor negativo, en dicho caso, se lanzará una excepción.
 
     6. El valor devuelto por este método será siempre menor para mujeres, en caso de que todos los  argumentos a excepción del género sean equivalentes respectivamente.
+![image](https://github.com/martinacsh/isa2024-healthcalc/assets/160426861/13f279a4-1de3-4950-91d6-050af7393299)
 
 ![Registro commits]("C:\Users\marti\Downloads\registro_commits.png")
