@@ -1,7 +1,10 @@
 # isa2024-healthcalc
-##Health calculator
 
-###Tests metodo idealWeight
+## Health calculator
+
+### Práctica 1
+
+#### Tests metodo idealWeight
     
     1. En caso de que el caracter introducido para definir el género sea distinto de 'm' o 'f', se debe  lanzar una excepción que muestre un mensaje explicando el error.  
     2. El argumento de la altura debe ser mayor que cero, en caso contrario, el método debe lanzar una  excepción que muestre un mensaje explicando el error.  
@@ -12,7 +15,7 @@
     
     5. Para alturas muy pequeñas, el método no debe devolver valores negativos (la fórmula proporciona éstos  resultados si se introducen alturas menores o iguales a 67 en mujeres y 84 en hombres) En su  lugar, lanzará una excepción con un mensaje que explique que la altura es demasiado pequeña.
 
-###Tests metodo basalMetabolicRate
+#### Tests metodo basalMetabolicRate
 
     1. La edad debe ser mayor a 0. En caso contrario, se lanzará una excepción que muestre un mensaje  explicando el error.
 
@@ -27,3 +30,33 @@
     6. El valor devuelto por este método será siempre menor para mujeres, en caso de que todos los  argumentos a excepción del género sean equivalentes respectivamente.
 
 ![Registro commits]("C:\Users\marti\Downloads\registro_commits.png")
+
+
+### Práctica 2
+## Caso de uso para la calculadora de salud
+-Nombre: Cálculo del peso ideal
+-Actor principal:
+-Stakeholder:
+-Intereses:
+-Alcance:
+-Nivel de abstracción:
+-Precondiciones:
+-Trigger: 
+-Escenario principal:
+    ·El usuario inicia el funcionamiento de la calculadora
+    ·El programa muestra al usuario los distintos parámetros que puede calcular
+    ·El usuario elige el método que calcula el peso ideal
+    ·El programa pide al usuario los parámetros necesarios para realizar los cálculos
+    ·El usuario proporciona sus datos
+    ·El programa comprueba que los valores sean válidos y realiza los cálculos
+    ·El programa comprueba que las soluciones obtenidas son coherentes
+    ·El programa muestra los resultados por pantalla
+
+-Extensiones:
+    ·Los datos introducidos no son correctos: El sistema detectará los inputs erróneos, informará  
+    al usuario del problema y le pedirá que los vuelva a introducir.
+    ·El resultado generado no es válido: El sistema gestionará las excepciones generadas por los  
+    resultados negativos informando del problema al usuario.
+
+
+## Diagrama
