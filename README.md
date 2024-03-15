@@ -35,13 +35,14 @@
 ### Práctica 2
 ## Caso de uso para la calculadora de salud
 -Nombre: Cálculo del peso ideal
--Actor principal:
--Stakeholder:
--Intereses:
+-Actor principal: Usuario de calculadora
+-Stakeholder: Usuario
+-Intereses: Hallar su peso ideal
 -Alcance:
--Nivel de abstracción:
--Precondiciones:
--Trigger: 
+-Nivel de abstracción: Alto nivel, centrado en la funcionalidad apartando los detalles de   
+implementación
+-Precondiciones: Los datos proporcionados por el usuario deben ser válidos
+-Trigger: El usuario selecciona el método idealWeight()
 -Escenario principal:
     ·El usuario inicia el funcionamiento de la calculadora
     ·El programa muestra al usuario los distintos parámetros que puede calcular
@@ -55,6 +56,7 @@
 -Extensiones:
     ·Los datos introducidos no son correctos: El sistema detectará los inputs erróneos, informará  
     al usuario del problema y le pedirá que los vuelva a introducir.
+
     ·El resultado generado no es válido: El sistema gestionará las excepciones generadas por los  
     resultados negativos informando del problema al usuario.
 
