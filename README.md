@@ -34,30 +34,30 @@
 
 ### Práctica 2
 ## Especificación de caso de uso para la calculadora de salud
--Nombre: Cálculo del peso ideal
--Actor principal: Usuario de calculadora
--Stakeholder: Usuario
--Intereses: Hallar su peso ideal
--Alcance: Este caso de uso se centra en proporcionar al usuario la capacidad de calcular su peso ideal mediante  utilizando la calculadora de salud.
--Nivel de abstracción: Alto nivel, centrado en la funcionalidad apartando los detalles de   
+- Nombre: Cálculo del peso ideal
+- Actor principal: Usuario de calculadora
+- Stakeholder: Usuario
+- Intereses: Hallar su peso ideal
+- Alcance: Este caso de uso se centra en proporcionar al usuario la capacidad de calcular su peso ideal     mediante  utilizando la calculadora de salud.
+- Nivel de abstracción: Alto nivel, centrado en la funcionalidad apartando los detalles de   
 implementación
--Precondiciones: Los datos proporcionados por el usuario deben ser válidos
--Trigger: El usuario selecciona el método idealWeight()
--Escenario principal:
-    1.El usuario inicia el funcionamiento de la calculadora
-    2.El programa muestra al usuario los distintos parámetros que puede calcular
-    3.El usuario elige el método que calcula el peso ideal
-    4.El programa pide al usuario los parámetros necesarios para realizar los cálculos
-    5.El usuario proporciona sus datos
-    6.El programa comprueba que los valores sean válidos y realiza los cálculos
-    7.El programa comprueba que las soluciones obtenidas son coherentes
-    8.El programa muestra los resultados por pantalla
+- Precondiciones: Los datos proporcionados por el usuario deben ser válidos
+- Trigger: El usuario selecciona el método idealWeight()
+- Escenario principal:
+    1. El usuario inicia el funcionamiento de la calculadora
+    2. El programa muestra al usuario los distintos parámetros que puede calcular
+    3. El usuario elige el método que calcula el peso ideal
+    4. El programa pide al usuario los parámetros necesarios para realizar los cálculos
+    5. El usuario proporciona sus datos
+    6. El programa comprueba que los valores sean válidos y realiza los cálculos
+    7. El programa comprueba que las soluciones obtenidas son coherentes
+    8. El programa muestra los resultados por pantalla
 
--Extensiones:
-    ·Los datos introducidos no son correctos: El sistema detectará los inputs erróneos, informará  
+- Extensiones:
+    · Los datos introducidos no son correctos: El sistema detectará los inputs erróneos, informará  
     al usuario del problema y le pedirá que los vuelva a introducir.
 
-    ·El resultado generado no es válido: El sistema gestionará las excepciones generadas por los  
+    · El resultado generado no es válido: El sistema gestionará las excepciones generadas por los  
     resultados negativos informando del problema al usuario.
 
 
