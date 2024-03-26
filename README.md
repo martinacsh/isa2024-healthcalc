@@ -29,7 +29,6 @@
 
     6. El valor devuelto por este método será siempre menor para mujeres, en caso de que todos los  argumentos a excepción del género sean equivalentes respectivamente.
 
-![Registro commits]("C:\Users\marti\Downloads\registro_commits.png")
 
 
 ### Práctica 2
