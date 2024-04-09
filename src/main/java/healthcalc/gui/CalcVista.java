@@ -1,15 +1,25 @@
 package healthcalc.gui;
 
 import java.awt.EventQueue;
+import java.awt.BorderLayout;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import java.awt.BorderLayout;
 
 public class CalcVista extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	private JPanel contentPane;
+	private JPanel contentPanelPrinc;
 
 	/**
 	 * Launch the application.
@@ -33,10 +43,15 @@ public class CalcVista extends JFrame {
 	public CalcVista() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPanelPrinc = new JPanel();
+		contentPanelPrinc.setBorder(new EmptyBorder(5, 5, 5, 5));
 
-		setContentPane(contentPane);
+		setContentPane(contentPanelPrinc);
+		contentPanelPrinc.setLayout(new BorderLayout(0, 0));
+		
+		JPanel panel = new JPanel();
+		contentPanelPrinc.add(panel, BorderLayout.NORTH);
+		panel.setLayout(new BorderLayout(0, 0));
 	}
 
 }
