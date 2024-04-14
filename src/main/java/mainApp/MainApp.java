@@ -16,9 +16,7 @@ public class MainApp {
 					Controller controlador = new Controller(modelo, vista);
 					vista.registrarControlador(controlador);
 					
-					vista.setVisible(true);
-					vista.pack();
-					
+
 					
 				} catch (Exception e) {
 					e.printStackTrace();

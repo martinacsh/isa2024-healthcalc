@@ -25,8 +25,17 @@ public class CalcVista extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPanelPrinc;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField textFieldWeight;
+	private JTextField textFieldBMR;
+	
+	private JSpinner spinnerHeight;
+	private JSpinner spinnerWeight;
+	private JSpinner spinnerAge;
+	private JRadioButton radioButtonFemale;
+	private JRadioButton radioButtonMale;
+	private JButton btnIdealWeight;
+	private JButton btnCalculateBmr;
+	
 
 	/**
 	 * Launch the application.
@@ -83,32 +92,32 @@ public class CalcVista extends JFrame {
 		gbl_Argumentspanel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		Argumentspanel.setLayout(gbl_Argumentspanel);
 		
-		JSpinner spinner_2_1 = new JSpinner();
-		spinner_2_1.setFont(new Font("Century Gothic", Font.PLAIN, 13));
-		GridBagConstraints gbc_spinner_2_1 = new GridBagConstraints();
-		gbc_spinner_2_1.anchor = GridBagConstraints.NORTH;
-		gbc_spinner_2_1.insets = new Insets(0, 0, 5, 5);
-		gbc_spinner_2_1.gridx = 1;
-		gbc_spinner_2_1.gridy = 2;
-		Argumentspanel.add(spinner_2_1, gbc_spinner_2_1);
+		JSpinner spinnerHeight = new JSpinner();
+		spinnerHeight.setFont(new Font("Century Gothic", Font.PLAIN, 13));
+		GridBagConstraints gbc_spinnerHeight = new GridBagConstraints();
+		gbc_spinnerHeight.anchor = GridBagConstraints.NORTH;
+		gbc_spinnerHeight.insets = new Insets(0, 0, 5, 5);
+		gbc_spinnerHeight.gridx = 1;
+		gbc_spinnerHeight.gridy = 2;
+		Argumentspanel.add(spinnerHeight, gbc_spinnerHeight);
 		
-		JSpinner spinner_2 = new JSpinner();
-		spinner_2.setFont(new Font("Century Gothic", Font.PLAIN, 13));
-		GridBagConstraints gbc_spinner_2 = new GridBagConstraints();
-		gbc_spinner_2.anchor = GridBagConstraints.NORTH;
-		gbc_spinner_2.insets = new Insets(0, 0, 5, 5);
-		gbc_spinner_2.gridx = 2;
-		gbc_spinner_2.gridy = 2;
-		Argumentspanel.add(spinner_2, gbc_spinner_2);
+		JSpinner spinnerWeight = new JSpinner();
+		spinnerWeight.setFont(new Font("Century Gothic", Font.PLAIN, 13));
+		GridBagConstraints gbc_spinnerWeight = new GridBagConstraints();
+		gbc_spinnerWeight.anchor = GridBagConstraints.NORTH;
+		gbc_spinnerWeight.insets = new Insets(0, 0, 5, 5);
+		gbc_spinnerWeight.gridx = 2;
+		gbc_spinnerWeight.gridy = 2;
+		Argumentspanel.add(spinnerWeight, gbc_spinnerWeight);
 		
-		JSpinner spinner_2_2 = new JSpinner();
-		spinner_2_2.setFont(new Font("Century Gothic", Font.PLAIN, 13));
-		GridBagConstraints gbc_spinner_2_2 = new GridBagConstraints();
-		gbc_spinner_2_2.anchor = GridBagConstraints.NORTH;
-		gbc_spinner_2_2.insets = new Insets(0, 0, 5, 5);
-		gbc_spinner_2_2.gridx = 3;
-		gbc_spinner_2_2.gridy = 2;
-		Argumentspanel.add(spinner_2_2, gbc_spinner_2_2);
+		JSpinner spinnerAge = new JSpinner();
+		spinnerAge.setFont(new Font("Century Gothic", Font.PLAIN, 13));
+		GridBagConstraints gbc_spinnerAge = new GridBagConstraints();
+		gbc_spinnerAge.anchor = GridBagConstraints.NORTH;
+		gbc_spinnerAge.insets = new Insets(0, 0, 5, 5);
+		gbc_spinnerAge.gridx = 3;
+		gbc_spinnerAge.gridy = 2;
+		Argumentspanel.add(spinnerAge, gbc_spinnerAge);
 		
 		JLabel lblNewLabel_1 = new JLabel("Height");
 		lblNewLabel_1.setForeground(UIManager.getColor("desktop"));
@@ -150,23 +159,23 @@ public class CalcVista extends JFrame {
 		gbc_lblNewLabel_1_1.gridy = 5;
 		Argumentspanel.add(lblNewLabel_1_1, gbc_lblNewLabel_1_1);
 		
-		JRadioButton RadioButtonFemale = new JRadioButton("Female");
-		RadioButtonFemale.setForeground(UIManager.getColor("desktop"));
-		RadioButtonFemale.setFont(new Font("Century Gothic", Font.PLAIN, 13));
-		GridBagConstraints gbc_RadioButtonFemale = new GridBagConstraints();
-		gbc_RadioButtonFemale.insets = new Insets(0, 0, 0, 5);
-		gbc_RadioButtonFemale.gridx = 1;
-		gbc_RadioButtonFemale.gridy = 6;
-		Argumentspanel.add(RadioButtonFemale, gbc_RadioButtonFemale);
+		JRadioButton radioButtonFemale = new JRadioButton("Female");
+		radioButtonFemale.setForeground(UIManager.getColor("desktop"));
+		radioButtonFemale.setFont(new Font("Century Gothic", Font.PLAIN, 13));
+		GridBagConstraints gbc_radioButtonFemale = new GridBagConstraints();
+		gbc_radioButtonFemale.insets = new Insets(0, 0, 0, 5);
+		gbc_radioButtonFemale.gridx = 1;
+		gbc_radioButtonFemale.gridy = 6;
+		Argumentspanel.add(radioButtonFemale, gbc_radioButtonFemale);
 		
-		JRadioButton RadioButtonMale = new JRadioButton("Male");
-		RadioButtonMale.setForeground(UIManager.getColor("desktop"));
-		RadioButtonMale.setFont(new Font("Century Gothic", Font.PLAIN, 13));
-		GridBagConstraints gbc_RadioButtonMale = new GridBagConstraints();
-		gbc_RadioButtonMale.insets = new Insets(0, 0, 0, 5);
-		gbc_RadioButtonMale.gridx = 3;
-		gbc_RadioButtonMale.gridy = 6;
-		Argumentspanel.add(RadioButtonMale, gbc_RadioButtonMale);
+		JRadioButton radioButtonMale = new JRadioButton("Male");
+		radioButtonMale.setForeground(UIManager.getColor("desktop"));
+		radioButtonMale.setFont(new Font("Century Gothic", Font.PLAIN, 13));
+		GridBagConstraints gbc_radioButtonMale = new GridBagConstraints();
+		gbc_radioButtonMale.insets = new Insets(0, 0, 0, 5);
+		gbc_radioButtonMale.gridx = 3;
+		gbc_radioButtonMale.gridy = 6;
+		Argumentspanel.add(radioButtonMale, gbc_radioButtonMale);
 		
 		JPanel Resultspanel = new JPanel();
 		Resultspanel.setBackground(UIManager.getColor("InternalFrame.inactiveTitleGradient"));
@@ -188,14 +197,14 @@ public class CalcVista extends JFrame {
 		gbc_btnIdealWeight.gridy = 1;
 		Resultspanel.add(btnIdealWeight, gbc_btnIdealWeight);
 		
-		textField = new JTextField();
-		textField.setFont(new Font("Century Gothic", Font.PLAIN, 13));
-		GridBagConstraints gbc_textField = new GridBagConstraints();
-		gbc_textField.insets = new Insets(0, 0, 5, 5);
-		gbc_textField.gridx = 0;
-		gbc_textField.gridy = 3;
-		Resultspanel.add(textField, gbc_textField);
-		textField.setColumns(10);
+		textFieldWeight = new JTextField();
+		textFieldWeight.setFont(new Font("Century Gothic", Font.PLAIN, 13));
+		GridBagConstraints gbc_textFieldWeight = new GridBagConstraints();
+		gbc_textFieldWeight.insets = new Insets(0, 0, 5, 5);
+		gbc_textFieldWeight.gridx = 0;
+		gbc_textFieldWeight.gridy = 3;
+		Resultspanel.add(textFieldWeight, gbc_textFieldWeight);
+		textFieldWeight.setColumns(10);
 		
 		JButton btnCalculateBmr = new JButton("Calculate BMR");
 		btnCalculateBmr.setForeground(UIManager.getColor("desktop"));
@@ -207,14 +216,14 @@ public class CalcVista extends JFrame {
 		gbc_btnCalculateBmr.gridy = 6;
 		Resultspanel.add(btnCalculateBmr, gbc_btnCalculateBmr);
 		
-		textField_1 = new JTextField();
-		textField_1.setFont(new Font("Century Gothic", Font.PLAIN, 13));
-		GridBagConstraints gbc_textField_1 = new GridBagConstraints();
-		gbc_textField_1.insets = new Insets(0, 0, 5, 5);
-		gbc_textField_1.gridx = 0;
-		gbc_textField_1.gridy = 8;
-		Resultspanel.add(textField_1, gbc_textField_1);
-		textField_1.setColumns(10);
+		textFieldBMR = new JTextField();
+		textFieldBMR.setFont(new Font("Century Gothic", Font.PLAIN, 13));
+		GridBagConstraints gbc_textFieldBMR = new GridBagConstraints();
+		gbc_textFieldBMR.insets = new Insets(0, 0, 5, 5);
+		gbc_textFieldBMR.gridx = 0;
+		gbc_textFieldBMR.gridy = 8;
+		Resultspanel.add(textFieldBMR, gbc_textFieldBMR);
+		textFieldBMR.setColumns(10);
 	}
 	
 	
@@ -222,11 +231,11 @@ public class CalcVista extends JFrame {
 	
 	public void registrarControlador(ActionListener controlador) {
 		btnIdealWeight.addActionListener(controlador);
-		btnCalculateBMR.setActionCommand("Calcular Peso Ideal");
+		btnCalculateBmr.setActionCommand("Calculate ideal weight");
 		
 
-		btnCalcularBmr.addActionListener(controlador);
-		btnCalcularBmr.setActionCommand("Calcular BMR");
+		btnCalculateBmr.addActionListener(controlador);
+		btnCalculateBmr.setActionCommand("Calcular BMR");
 		
 		
 	}

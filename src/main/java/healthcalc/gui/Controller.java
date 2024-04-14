@@ -17,9 +17,39 @@ public class Controller implements ActionListener {
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+	public void actionPerformed(ActionEvent ev) {
+		
+		String event = ev.getActionCommand();
+		if (event.equals("Calcular Peso Ideal")) {
+			
+			int altura = vista.getAltura();
+			char genero= vista.getGenero();
+			try {
+				float resultado = modelo.idealWeight(altura, genero);	
+				vista.setResultPI(resultado);
+			} catch (Exception error) {
+				String msg= event+": "+error.getMessage();
+				vista.error(msg);
+			}
+			
+		}else if(event.equals("Calcular BMR")) {
+			int altura = vista.getAltura();
+			char genero= vista.getGenero();
+			int edad= vista.getEdad();
+			float peso= vista.getPeso();
+			try {
+				float resultado = modelo.basalMetabolicRate(peso, altura, genero, edad);	
+				vista.setResultBMR(resultado);
+			} catch (Exception error) {
+				String msg= event+": "+error.getMessage();
+				vista.error(msg);
+			}
+		}
 		
 	}
 
+	
+	
+	
+	
 }
