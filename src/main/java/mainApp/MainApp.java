@@ -15,9 +15,15 @@ public class MainApp {
 					CalcVista vista = new CalcVista();
 					Controller controlador = new Controller(modelo, vista);
 					vista.registrarControlador(controlador);
+					
+					vista.setVisible(true);
+					vista.pack();
+					
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
+				
 			}
 		});
 
