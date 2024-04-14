@@ -17,6 +17,7 @@ import java.awt.FlowLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.awt.event.ActionListener;
 import java.awt.GridLayout;
 import javax.swing.JTextField;
 import javax.swing.JButton;
@@ -277,7 +278,7 @@ public class CalcVista extends JFrame {
 		
 
 		btnCalculateBmr.addActionListener(controlador);
-		btnCalculateBmr.setActionCommand("Calcular BMR");
+		btnCalculateBmr.setActionCommand("Calculate BMR");
 		
 		
 	}

@@ -19,37 +19,38 @@ public class Controller implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent ev) {
 		
-		String event = ev.getActionCommand();
-		if (event.equals("Calcular Peso Ideal")) {
+		String mensaje = ev.getActionCommand();
+		if (mensaje.equals("Calculate Ideal Weight")) {
 			
-			int altura = vista.getAltura();
-			char genero= vista.getGenero();
+			int height = vista.getHeight();
+			char gender = vista.getGender();
 			try {
-				float resultado = modelo.idealWeight(altura, genero);	
-				vista.setResultPI(resultado);
-			} catch (Exception error) {
-				String msg= event+": "+error.getMessage();
-				vista.error(msg);
+				float result = modelo.idealWeight(height, gender);	
+				vista.setIdealWeight(result);
+				
+			} catch (Exception e) {
+				String m = mensaje + ": " + e.getMessage();
+				vista.error(m);
 			}
 			
-		}else if(event.equals("Calcular BMR")) {
-			int altura = vista.getAltura();
-			char genero= vista.getGenero();
-			int edad= vista.getEdad();
-			float peso= vista.getPeso();
+		}else if(mensaje.equals("Calculate BMR")) {
+			int height = vista.getHeight();
+			char gender = vista.getGender();
+			int age = vista.getAge();
+			float weight = vista.getWeight();
 			try {
-				float resultado = modelo.basalMetabolicRate(peso, altura, genero, edad);	
-				vista.setResultBMR(resultado);
-			} catch (Exception error) {
-				String msg= event+": "+error.getMessage();
-				vista.error(msg);
+				float resultado = modelo.basalMetabolicRate(weight, height, gender, age);	
+				vista.setBMR(resultado);
+				
+			} catch (Exception e) {
+				
+				String m = mensaje + ": " + e.getMessage();
+				vista.error(m);
 			}
 		}
 		
 	}
+		
+	}
 
 	
-	
-	
-	
-}
