@@ -20,6 +20,7 @@ import java.awt.Insets;
 import java.awt.GridLayout;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
 public class CalcVista extends JFrame {
 
@@ -224,9 +225,50 @@ public class CalcVista extends JFrame {
 		gbc_textFieldBMR.gridy = 8;
 		Resultspanel.add(textFieldBMR, gbc_textFieldBMR);
 		textFieldBMR.setColumns(10);
+		
+		pack();
+		setVisible(true);
 	}
 	
 	
+	
+	
+	public char getGender() {
+		if(radioButtonFemale.isSelected()) {
+			return 'w';
+		}else{
+			return 'm';
+		}
+		
+	}
+	public float getWeight() {
+		return ((Double) spinnerWeight.getValue()).floatValue();	
+
+}
+
+
+	public int getAge() {
+		return (Integer) spinnerAge.getValue();	
+	}
+	public int getHeight() {
+		return (Integer) spinnerHeight.getValue();	
+
+	}
+	
+	
+	
+	
+	public void error(String msg) {
+		JOptionPane.showMessageDialog(null, msg, "error", JOptionPane.ERROR_MESSAGE);
+	}
+	
+	public void setIdealWeight(float resultado){
+		textFieldWeight.setText(String.valueOf(resultado)+" kg");
+	}
+	
+	public void setBMR(float resultado) {
+		textFieldBMR.setText(String.valueOf(resultado)+" calorías por día");
+	}
 	
 	
 	public void registrarControlador(ActionListener controlador) {
