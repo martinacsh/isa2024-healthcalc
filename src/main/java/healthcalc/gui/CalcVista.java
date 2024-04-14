@@ -18,11 +18,15 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.GridLayout;
+import javax.swing.JTextField;
+import javax.swing.JButton;
 
 public class CalcVista extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPanelPrinc;
+	private JTextField textField;
+	private JTextField textField_1;
 
 	/**
 	 * Launch the application.
@@ -169,29 +173,62 @@ public class CalcVista extends JFrame {
 		contentPanelPrinc.add(Resultspanel, BorderLayout.CENTER);
 		GridBagLayout gbl_Resultspanel = new GridBagLayout();
 		gbl_Resultspanel.columnWidths = new int[]{151, 49, 0};
-		gbl_Resultspanel.rowHeights = new int[]{17, 0, 0, 0, 0};
-		gbl_Resultspanel.columnWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
-		gbl_Resultspanel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_Resultspanel.rowHeights = new int[]{17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+		gbl_Resultspanel.columnWeights = new double[]{1.0, 0.0, Double.MIN_VALUE};
+		gbl_Resultspanel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		Resultspanel.setLayout(gbl_Resultspanel);
 		
-		JLabel lblNewLabel_3 = new JLabel("Calculate Ideal Weight");
-		lblNewLabel_3.setForeground(UIManager.getColor("desktop"));
-		lblNewLabel_3.setFont(new Font("Century Gothic", Font.PLAIN, 13));
-		GridBagConstraints gbc_lblNewLabel_3 = new GridBagConstraints();
-		gbc_lblNewLabel_3.anchor = GridBagConstraints.NORTHWEST;
-		gbc_lblNewLabel_3.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNewLabel_3.gridx = 0;
-		gbc_lblNewLabel_3.gridy = 0;
-		Resultspanel.add(lblNewLabel_3, gbc_lblNewLabel_3);
+		JButton btnIdealWeight = new JButton("Calculate Ideal Weight");
+		btnIdealWeight.setBackground(UIManager.getColor("info"));
+		btnIdealWeight.setForeground(UIManager.getColor("desktop"));
+		btnIdealWeight.setFont(new Font("Century Gothic", Font.PLAIN, 13));
+		GridBagConstraints gbc_btnIdealWeight = new GridBagConstraints();
+		gbc_btnIdealWeight.insets = new Insets(0, 0, 5, 5);
+		gbc_btnIdealWeight.gridx = 0;
+		gbc_btnIdealWeight.gridy = 1;
+		Resultspanel.add(btnIdealWeight, gbc_btnIdealWeight);
 		
-		JLabel lblNewLabel_4 = new JLabel("Calculate BMR");
-		lblNewLabel_4.setFont(new Font("Century Gothic", Font.PLAIN, 13));
-		GridBagConstraints gbc_lblNewLabel_4 = new GridBagConstraints();
-		gbc_lblNewLabel_4.insets = new Insets(0, 0, 0, 5);
-		gbc_lblNewLabel_4.anchor = GridBagConstraints.WEST;
-		gbc_lblNewLabel_4.gridx = 0;
-		gbc_lblNewLabel_4.gridy = 3;
-		Resultspanel.add(lblNewLabel_4, gbc_lblNewLabel_4);
+		textField = new JTextField();
+		textField.setFont(new Font("Century Gothic", Font.PLAIN, 13));
+		GridBagConstraints gbc_textField = new GridBagConstraints();
+		gbc_textField.insets = new Insets(0, 0, 5, 5);
+		gbc_textField.gridx = 0;
+		gbc_textField.gridy = 3;
+		Resultspanel.add(textField, gbc_textField);
+		textField.setColumns(10);
+		
+		JButton btnCalculateBmr = new JButton("Calculate BMR");
+		btnCalculateBmr.setForeground(UIManager.getColor("desktop"));
+		btnCalculateBmr.setFont(new Font("Century Gothic", Font.PLAIN, 13));
+		btnCalculateBmr.setBackground(UIManager.getColor("ToolTip.background"));
+		GridBagConstraints gbc_btnCalculateBmr = new GridBagConstraints();
+		gbc_btnCalculateBmr.insets = new Insets(0, 0, 5, 5);
+		gbc_btnCalculateBmr.gridx = 0;
+		gbc_btnCalculateBmr.gridy = 6;
+		Resultspanel.add(btnCalculateBmr, gbc_btnCalculateBmr);
+		
+		textField_1 = new JTextField();
+		textField_1.setFont(new Font("Century Gothic", Font.PLAIN, 13));
+		GridBagConstraints gbc_textField_1 = new GridBagConstraints();
+		gbc_textField_1.insets = new Insets(0, 0, 5, 5);
+		gbc_textField_1.gridx = 0;
+		gbc_textField_1.gridy = 8;
+		Resultspanel.add(textField_1, gbc_textField_1);
+		textField_1.setColumns(10);
+	}
+	
+	
+	
+	
+	public void registrarControlador(ActionListener controlador) {
+		btnIdealWeight.addActionListener(controlador);
+		btnCalculateBMR.setActionCommand("Calcular Peso Ideal");
+		
+
+		btnCalcularBmr.addActionListener(controlador);
+		btnCalcularBmr.setActionCommand("Calcular BMR");
+		
+		
 	}
 
 }
