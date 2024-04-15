@@ -28,4 +28,16 @@
 
 <img width="242" alt="registro_commits" src="https://github.com/martinacsh/isa2024-healthcalc/assets/160426861/3d57b48e-1a12-45b4-ad1c-13e962c53777">
 
-![Registro commits]("C:\Users\marti\OneDrive\Documentos\Git\isa2024-healthcalc\registro_commits.png")
+
+## Practica 4
+
+### Borrador GUI
+
+<img width="252" alt="borradorpr4" src="https://github.com/martinacsh/isa2024-healthcalc/assets/160426861/4f424125-e292-443c-ae63-12849c9e97f3">
+
+### Interfaz gráfica de usuario
+
+<img width="280" alt="InterfazGráfica4" src="https://github.com/martinacsh/isa2024-healthcalc/assets/160426861/6cebbdc5-eeac-4743-a390-72f7765c4324">
+
+
+
