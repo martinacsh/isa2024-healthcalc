@@ -1,5 +1,6 @@
 package mainApp;
 import java.awt.EventQueue;
+import healthcalc.gui.*;
 
 import healthcalc.HealthCalculator;
 
