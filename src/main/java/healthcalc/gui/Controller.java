@@ -9,9 +9,9 @@ import java.awt.event.ActionListener;
 
 public class Controller implements ActionListener {
 	private HealthCalculator modelo;
-	private CalcVista vista;
+	private VistaCalc vista;
 	
-	public Controller(HealthCalculator modelo, CalcVista vista) {
+	public Controller(HealthCalculator modelo, VistaCalc vista) {
 		this.modelo = modelo;
 		this.vista = vista;
 	}

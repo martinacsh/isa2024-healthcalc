@@ -13,7 +13,7 @@ public class MainApp {
 			public void run() {
 				try {
 					HealthCalculator modelo = new HealthCalculator();
-					CalcVista vista = new CalcVista();
+					VistaCalc vista = new VistaCalc();
 					Controller controlador = new Controller(modelo, vista);
 					vista.registrarControlador(controlador);
 					
