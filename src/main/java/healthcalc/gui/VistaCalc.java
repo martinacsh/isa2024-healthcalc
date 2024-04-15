@@ -240,7 +240,55 @@ public class VistaCalc extends JFrame {
 
 	}
 	
+	public char getGender() {
+		if(radioButtonFemale.isSelected()) {
+			return 'w';
+		} else
+		{
+			return 'm';
+		}
+		
+	}
+	public float getWeight() {
+		return ((Double) WeightSpinner.getValue()).floatValue();	
+
+}
+
+
+	public int getAge() {
+		return (Integer) AgeSpinner.getValue();	
+	}
+	public int getHeight() {
+		return (Integer) HeightSpinner.getValue();	
+
+	}
 	
+	
+	
+	
+	public void error(String msg) {
+		JOptionPane.showMessageDialog(null, msg, "error", JOptionPane.ERROR_MESSAGE);
+	}
+	
+	public void setIdealWeight(float resultado){
+		weightTextField.setText(String.valueOf(resultado)+" kg");
+	}
+	
+	public void setBMR(float resultado) {
+		textFieldBMR.setText(String.valueOf(resultado)+" calorías por día");
+	}
+	
+	
+	public void registrarControlador(ActionListener controlador) {
+		btnIdealWeight.addActionListener(controlador);
+		btnIdealWeight.setActionCommand("Calculate ideal weight");
+		
+
+		btnBMR.addActionListener(controlador);
+		btnBMR.setActionCommand("Calculate BMR");
+		
+		
+	}
 	
 
 }
