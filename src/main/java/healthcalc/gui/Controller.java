@@ -2,7 +2,6 @@ package healthcalc.gui;
 
 import healthcalc.HealthCalculator;
 
-import healthcalc.gui.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

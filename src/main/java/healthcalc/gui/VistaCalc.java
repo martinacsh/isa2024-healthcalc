@@ -21,8 +21,6 @@ import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JTextField;
-import javax.swing.JRadioButtonMenuItem;
-import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
 public class VistaCalc extends JFrame {

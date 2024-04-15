@@ -4,7 +4,6 @@ import healthcalc.gui.*;
 
 import healthcalc.HealthCalculator;
 
-import healthcalc.gui.*;
 
 public class MainApp {
 
