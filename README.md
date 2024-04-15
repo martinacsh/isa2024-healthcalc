@@ -37,7 +37,8 @@
 
 ### Interfaz gráfica de usuario
 
-<img width="280" alt="InterfazGráfica4" src="https://github.com/martinacsh/isa2024-healthcalc/assets/160426861/6cebbdc5-eeac-4743-a390-72f7765c4324">
+<img width="463" alt="InterfazGráfica4" src="https://github.com/martinacsh/isa2024-healthcalc/assets/160426861/2474ab2f-6a7d-4ff2-826a-0adfc6bb7c64">
+
 
 
 
