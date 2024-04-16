@@ -17,8 +17,8 @@
 ## (Comments)
 #Sample Feature Definition Template
 @tag
-Feature: Title of your feature
-  I want to use this template for my feature file
+Feature: Calculate Basal Metabolic Rate
+  I want to obtain the ideal weight in accordance with the provided arguments
 
   @tag1
   Scenario: Title of your scenario

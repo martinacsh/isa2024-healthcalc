@@ -21,22 +21,59 @@ Feature: Calculate Ideal Weight
 	I want to obtain the ideal weight in accordance with the provided arguments
 
   @tag1
-  Scenario: Title of your scenario
-    Given I want to write a step with precondition
-    And some other precondition
-    When I complete action
-    And some other action
-    And yet another action
-    Then I validate the outcomes
-    And check more outcomes
+  Scenario Outline: Invalid gender
+    Given I use a health calculator
+    When I calculate the ideal weight with an incorrect gender <g>
+    Then the program throws an exception
+    Examples: 
+      | 3 |
+      | a |
+      |'*'|
+
 
   @tag2
-  Scenario Outline: Title of your scenario outline
-    Given I want to write a step with <name>
-    When I check for the <value> in step
-    Then I verify the <status> in step
-
+  Scenario: Invalid height
+    Given I use a health calculator
+    When I calculate the ideal weight with an invalid height <h>
+    Then the program throws an exception
     Examples: 
-      | name  | value | status  |
-      | name1 |     5 | success |
-      | name2 |     7 | Fail    |
+      | -3 |
+      |  0 |
+      | 'f'|
+      
+  @tag3
+  Scenario: Invalid weight
+    Given I use a health calculator
+    When I calculate the ideal weight with an invalid weight <w>
+    Then the program throws an exception
+    Examples: 
+      |-15|
+      | 0 |
+      |'f'|
+      
+  @tag4
+  Scenario Outline: Negative output
+    Given I have an health calculator
+    When I calculate the ideal weight for height <h> and gender <g> and the output is negative
+    Then the program throws an exception
+    
+   	Examples: 
+   		| g | h |
+      |'w'| 29 |
+      |'m'| 82 |
+      |'m'| 39 |
+      |'w'| 66 |
+      
+      
+  @tag4
+  Scenario Outline: valid output
+    Given I have an health calculator
+    When I calculate the ideal weight for height <h> and gender <g>
+    Then the program provides an appropiate output <output>
+    
+   	Examples: 
+      | g |  h  | output |
+      |'w'| 173 | '63.8' |
+      |'m'| 169 | '64.2' |
+      |'m'| 183 | '74.7' |
+      |'w'| 150 |  '50'  |
