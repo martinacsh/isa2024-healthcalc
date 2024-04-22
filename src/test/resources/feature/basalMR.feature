@@ -55,7 +55,7 @@ Feature: Calculate Basal Metabolic Rate
   Scenario Outline: Invalid Age
     Given I use a health calculator
     When I calculate the basal metabolic rate for an age with negative value <a>
-    Then the system raises an exception
+    Then the system throws an exception
 
     Examples: 
       | - |
