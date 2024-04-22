@@ -34,24 +34,15 @@ Feature: Calculate Ideal Weight
   @tag2
   Scenario: Invalid height
     Given I use a health calculator
-    When I calculate the ideal weight with an invalid height <h>
+    When I calculate the ideal weight with an incorrect height <h>
     Then the program throws an exception
     Examples: 
       | -3 |
       |  0 |
       | 'f'|
       
-  @tag3
-  Scenario: Invalid weight
-    Given I use a health calculator
-    When I calculate the ideal weight with an invalid weight <w>
-    Then the program throws an exception
-    Examples: 
-      |-15|
-      | 0 |
-      |'f'|
       
-  @tag4
+  @tag3
   Scenario Outline: Negative output
     Given I have an health calculator
     When I calculate the ideal weight for height <h> and gender <g> and the output is negative
@@ -65,8 +56,8 @@ Feature: Calculate Ideal Weight
       |'w'| 66 |
       
       
-  @tag4
-  Scenario Outline: valid output
+  @tag5
+  Scenario Outline: valid arguments
     Given I have an health calculator
     When I calculate the ideal weight for height <h> and gender <g>
     Then the program provides an appropiate output <output>
