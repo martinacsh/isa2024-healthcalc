@@ -44,7 +44,7 @@ Feature: Calculate Ideal Weight
       
   @tag3
   Scenario Outline: Negative output
-    Given I have an health calculator
+    Given I use a health calculator
     When I calculate the ideal weight for height <h> and gender <g> and the output is negative
     Then the program throws an exception
     
@@ -58,7 +58,7 @@ Feature: Calculate Ideal Weight
       
   @tag5
   Scenario Outline: valid arguments
-    Given I have an health calculator
+    Given I use a health calculator
     When I calculate the ideal weight for height <h> and gender <g>
     Then the program provides an appropiate output <output>
     

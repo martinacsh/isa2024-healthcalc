@@ -16,7 +16,7 @@
 #""
 ## (Comments)
 #Sample Feature Definition Template
-@tag
+@BasalMR
 Feature: Calculate Basal Metabolic Rate
   I want to obtain the basal metabolic rate in accordance with the provided arguments
 
@@ -65,7 +65,7 @@ Feature: Calculate Basal Metabolic Rate
       
   @tag5
   Scenario Outline: valid arguments
-    Given I have an health calculator
+    Given I use a health calculator
     When I calculate the basal metabolic rate for height <h> gender <g> age <a> and weight <w>
     Then the program provides an appropiate output <output>
     
