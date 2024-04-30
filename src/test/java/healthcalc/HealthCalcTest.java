@@ -1,13 +1,11 @@
 package healthcalc;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -91,7 +89,7 @@ public class HealthCalcTest {
 		@DisplayName("basalMR() argumento género no válido")
 		public void test1_basalMR_gender(char gender) throws Exception {
 			assertThrows(Exception.class, () -> {
-				obj.basalMetabolicRate(57, 173, gender, 24);
+				obj.basalMetabolicRate(173, 64, gender, 30);
 			});
 		}
 
@@ -101,7 +99,7 @@ public class HealthCalcTest {
 	@DisplayName("basalMR() argumento altura no válido")
 	public void test2_basalMR_height(int height, char gender) throws Exception {
 		assertThrows(Exception.class, () -> {
-			obj.basalMetabolicRate(57, height, gender, 24);
+			obj.basalMetabolicRate(157, height, gender, 24);
 		});
 	}
 
@@ -111,12 +109,12 @@ public class HealthCalcTest {
 	@DisplayName("basalMR() argumento peso no válido")
 	public void test3_basalMR_weight(int weight, char gender) throws Exception {
 		assertThrows(Exception.class, () -> {
-			obj.basalMetabolicRate(weight, 173, gender, 24);
+			obj.basalMetabolicRate(weight, 173, gender, 20);
 		});
 
 	}
 	@ParameterizedTest
-	@CsvSource({ "0, 'w'", "-1, 'm'" })
+	@CsvSource({ "'w', 0", "'m', -1" })
 	@DisplayName("basalMR() argumento edad no válido")
 	public void test4_basalMRI_age(char gender, int age) throws Exception {
 		assertThrows(Exception.class, () -> {
@@ -124,8 +122,8 @@ public class HealthCalcTest {
 		});
 	}
 	@ParameterizedTest
-	@CsvSource({ "173, 'w', , 13", "165, 'w', 89, 78",
-			"50, 4, 'm', 1", "125, 45, 'w', 60", "1000, 'm', 343, 23" })
+	@CsvSource({ "57, 173, 'w', 16", "71, 165, 'w', 78",
+			"50, 4, 'm', 1", "125, 45, 'w', 60", "1000, 200, 'm', 23" })
 	@DisplayName("basalMR() todos los argumentos correctos, no lanza exc")
 	public void test5_basalMR_correctArguments(int weight, int height, char gender, int age) throws Exception {
 		assertDoesNotThrow(() -> {
