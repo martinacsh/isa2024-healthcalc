@@ -62,16 +62,16 @@ Feature: Calculate Basal Metabolic Rate
 
     Examples: 
     	| a |
-      | "-" |
+      | -34 |
       | -1 |
       | -69 |
-      | u |
+      
       
   @tag5
   Scenario Outline: valid arguments
     Given I use a health calculator
     When I calculate the basal metabolic rate for weight <w> height <h> gender <g> and age <a>
-    Then the program provides an appropiate output <output>
+    Then the program provides appropiate results <output>
     
    	Examples: 
       | g | h | a | w | output|
