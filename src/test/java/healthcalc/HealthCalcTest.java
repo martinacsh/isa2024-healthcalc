@@ -116,7 +116,7 @@ public class HealthCalcTest {
 
 	}
 	@ParameterizedTest
-	@CsvSource({ "-35, 'w'", "-7, 'm'" })
+	@CsvSource({ "0, 'w'", "-1, 'm'" })
 	@DisplayName("basalMR() argumento edad no válido")
 	public void test4_basalMRI_age(char gender, int age) throws Exception {
 		assertThrows(Exception.class, () -> {
@@ -125,7 +125,7 @@ public class HealthCalcTest {
 	}
 	@ParameterizedTest
 	@CsvSource({ "173, 'w', , 13", "165, 'w', 89, 78",
-			"50, 'm', 4, 1", "125, 'w', 45, 60", "1000, 'm', 343, 23" })
+			"50, 4, 'm', 1", "125, 45, 'w', 60", "1000, 'm', 343, 23" })
 	@DisplayName("basalMR() todos los argumentos correctos, no lanza exc")
 	public void test5_basalMR_correctArguments(int weight, int height, char gender, int age) throws Exception {
 		assertDoesNotThrow(() -> {

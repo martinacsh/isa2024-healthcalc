@@ -45,11 +45,7 @@ public class StepDefinition {
 		}
 	}
 
-	@When("I calculate the ideal weight with an incorrect height {string}")
-	public void i_calculate_the_ideal_weight_with_an_incorrect_height(String string) {
-		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
-	}
+
 
 	@When("I calculate the ideal weight for height {int} and gender {string} and the output is negative")
 	public void i_calculate_the_ideal_weight_for_height_and_gender_and_the_output_is_negative(Integer int1,
