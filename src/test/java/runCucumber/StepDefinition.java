@@ -13,110 +13,79 @@ public class StepDefinition {
 	private float result;
 	private boolean exception;
 
-	// IdealWeight
-
+	//IdealWeight
+	
 	@Given("I use a health calculator")
 	public void i_use_a_health_calculator() {
 		calculator = new HealthCalculator();
+	    throw new io.cucumber.java.PendingException();
 	}
-
-	@When("I calculate the ideal weight with an incorrect gender <g>")
-	public void i_calculate_the_ideal_weight_with_an_incorrect_gender_g(String g) {
+/*
+	@When("I calculate the ideal weight with an incorrect gender {int}")
+	public void i_calculate_the_ideal_weight_with_an_incorrect_gender(Integer int1) {
 		try {
-			calculator.idealWeight(173, g.toCharArray()[0]);
+			calculator.idealWeight(173, int1);
 		} catch (Exception e) {
 			exception = true;
 		}
-
+	    
 	}
+*/
 
 	@Then("the program throws an exception")
 	public void the_program_throws_an_exception() {
 		assertTrue(exception);
 	}
-
-	@When("I calculate the ideal weight with an incorrect height <h>")
-	public void i_calculate_the_ideal_weight_with_an_incorrect_height_h(Integer n) {
+/*
+	@When("I calculate the ideal weight with an incorrect gender a")
+	public void i_calculate_the_ideal_weight_with_an_incorrect_gender_a() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+*/
+	@When("I calculate the ideal weight with an incorrect gender {string}")
+	public void i_calculate_the_ideal_weight_with_an_incorrect_gender(String string) {
 		try {
-			calculator.idealWeight(n, 'm');
+			calculator.idealWeight(173, string.toCharArray()[0]);
 		} catch (Exception e) {
 			exception = true;
 		}
 	}
 
-	@When("I calculate the ideal weight for height {int} and gender {string} and the output is negative")
-	public void i_calculate_the_ideal_weight_for_height_and_gender_and_the_output_is_negative(Integer n, String g) {
+	@When("I calculate the ideal weight with an incorrect height {int}")
+	public void i_calculate_the_ideal_weight_with_an_incorrect_height(Integer int1) {
 		try {
-			calculator.idealWeight(n, g.toCharArray()[0]);
+			calculator.idealWeight(int1, 'm');
+		} catch (Exception e) {
+			exception = true;
+		}
+	}
+
+	@When("I calculate the ideal weight with an incorrect height {string}")
+	public void i_calculate_the_ideal_weight_with_an_incorrect_height(String string) {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("I calculate the ideal weight for height {int} and gender {string} and the output is negative")
+	public void i_calculate_the_ideal_weight_for_height_and_gender_and_the_output_is_negative(Integer int1, String string) {
+		try {
+			calculator.idealWeight(int1, string.toCharArray()[0]);
 		} catch (Exception e) {
 			exception = true;
 		}
 	}
 
 	@When("I calculate the ideal weight for height {int} and gender {string}")
-	public void i_calculate_the_ideal_weight_for_height_and_gender(Integer n, String g) throws Exception {
-		result = calculator.idealWeight(n, g.toCharArray()[0]);
+	public void i_calculate_the_ideal_weight_for_height_and_gender(Integer int1, String string) throws Exception {
+		result = calculator.idealWeight(int1, string.toCharArray()[0]);
 	}
 
 	@Then("the program provides an appropiate output {string}")
-	public void the_program_provides_an_appropiate_output(String s) {
-		assertEquals(Float.parseFloat(s), result);
-	}
-
-	// -----------------------------------------------------
-
-	// BasalMR
-
-	@When("I calculate the basal metabolic rate with an incorrect gender <g>")
-	public void i_calculate_the_basal_metabolic_rate_with_an_incorrect_gender_g(String g) {
-		try {
-			calculator.basalMetabolicRate(60, 173, g.toCharArray()[0], 21);
-		} catch (Exception e) {
-			exception = true;
-		}
-	}
-
-	@When("I calculate the basal metabolic rate with an incorrect height <h>")
-	public void i_calculate_the_basal_metabolic_rate_with_an_incorrect_height_h(Integer n) {
-		try {
-			calculator.basalMetabolicRate(80, n, 'm', 19);
-		} catch (Exception e) {
-			exception = true;
-		}
-	}
-
-	@When("I calculate the basal metabolic rate with an incorrect weight <w>")
-	public void i_calculate_the_basal_metabolic_rate_with_an_incorrect_weight_w(Integer n) {
-		try {
-			calculator.basalMetabolicRate(n, 169, 'w', 30);
-		} catch (Exception e) {
-			exception = true;
-		}
-	}
-
-	@When("I calculate the basal metabolic rate for an age with negative value <a>")
-	public void i_calculate_the_basal_metabolic_rate_for_an_age_with_negative_value_a(Integer n) {
-		try {
-			calculator.basalMetabolicRate(50, 160, 'w', n);
-		}catch(Exception e) {
-			exception= true;
-		}
-	}
-
-	@Then("the system throws an excep")
-	public void the_system_throws_an_excep() {
-		assertTrue(exception);
-	}
-
-	@When("I calculate the basal metabolic rate for height {int} gender {string} age {int} and weight {int}")
-	public void i_calculate_the_basal_metabolic_rate_for_height_gender_age_and_weight(Integer n1, String s,
-			Integer n2, Integer n3) throws Exception{
-		result = calculator.basalMetabolicRate(n1, n2, s.toCharArray()[0], n3);
+	public void the_program_provides_an_appropiate_output(String string) {
+		assertEquals(Float.parseFloat(string), result);
 	}
 	
-	@Then("the program provides an appropiate result {string}")
-	public void the_program_provides_an_appropiate_result(String s) {
-		assertEquals(Float.parseFloat(s), result);
-	}
+	//BasalMR----------------------------------------------------------------------------------------------
 
 }

@@ -26,6 +26,7 @@ Feature: Calculate Basal Metabolic Rate
     When I calculate the basal metabolic rate with an incorrect gender <g>
     Then the program throws an exception
     Examples: 
+    	| g |
       | 6 |
       | "s" |
       | '*' |
@@ -37,6 +38,7 @@ Feature: Calculate Basal Metabolic Rate
     When I calculate the basal metabolic rate with an incorrect height <h>
     Then the program throws an exception
     Examples: 
+    	| h |
       | -3 |
       | 0 |
       | 'f' |
@@ -47,6 +49,7 @@ Feature: Calculate Basal Metabolic Rate
     When I calculate the basal metabolic rate with an incorrect weight <w>
     Then the program throws an exception
     Examples: 
+    	| w |
       | -15 |
       | 0 |
       | 'f' |
@@ -58,6 +61,7 @@ Feature: Calculate Basal Metabolic Rate
     Then the system throws an exception
 
     Examples: 
+    	| a |
       | "-" |
       | -1 |
       | -69 |
@@ -66,7 +70,7 @@ Feature: Calculate Basal Metabolic Rate
   @tag5
   Scenario Outline: valid arguments
     Given I use a health calculator
-    When I calculate the basal metabolic rate for height <h> gender <g> age <a> and weight <w>
+    When I calculate the basal metabolic rate for weight <w> height <h> gender <g> and age <a>
     Then the program provides an appropiate output <output>
     
    	Examples: 

@@ -26,6 +26,7 @@ Feature: Calculate Ideal Weight
     When I calculate the ideal weight with an incorrect gender <g>
     Then the program throws an exception
     Examples: 
+    	| g |
       | 3 |
       | a |
       |'*'|
@@ -37,6 +38,7 @@ Feature: Calculate Ideal Weight
     When I calculate the ideal weight with an incorrect height <h>
     Then the program throws an exception
     Examples: 
+    	| h |
       | -3 |
       |  0 |
       | 'f'|
