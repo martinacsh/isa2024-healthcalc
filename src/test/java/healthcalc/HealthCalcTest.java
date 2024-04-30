@@ -45,7 +45,7 @@ public class HealthCalcTest {
 
 	@ParameterizedTest
 	@CsvSource({ "84, 'm'", "67, 'w'",
-			"187, 'm'", "173, 'w'"})
+			"180, 'm'", "165, 'w'"})
 	@DisplayName("idealWeight() argumentos válidos")
 	public void test3_IdealWeight_correctArguments(int height, char gender) throws Exception {
 		assertDoesNotThrow(() -> {

@@ -18,7 +18,7 @@ public class StepDefinition {
 	@Given("I use a health calculator")
 	public void i_use_a_health_calculator() {
 		calculator = new HealthCalculator();
-		throw new io.cucumber.java.PendingException();
+		
 	}
 	/*
 	 * @When("I calculate the ideal weight with an incorrect gender {int}") public
