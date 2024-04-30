@@ -20,26 +20,13 @@ public class StepDefinition {
 		calculator = new HealthCalculator();
 		
 	}
-	/*
-	 * @When("I calculate the ideal weight with an incorrect gender {int}") public
-	 * void i_calculate_the_ideal_weight_with_an_incorrect_gender(Integer int1) {
-	 * try { calculator.idealWeight(173, int1); } catch (Exception e) { exception =
-	 * true; }
-	 * 
-	 * }
-	 */
+	
 
 	@Then("the program throws an exception")
 	public void the_program_throws_an_exception() {
 		assertTrue(exception);
 	}
 
-	/*
-	 * @When("I calculate the ideal weight with an incorrect gender a") public void
-	 * i_calculate_the_ideal_weight_with_an_incorrect_gender_a() { // Write code
-	 * here that turns the phrase above into concrete actions throw new
-	 * io.cucumber.java.PendingException(); }
-	 */
 	@When("I calculate the ideal weight with an incorrect gender {string}")
 	public void i_calculate_the_ideal_weight_with_an_incorrect_gender(String string) {
 		try {
@@ -85,13 +72,7 @@ public class StepDefinition {
 	}
 
 	// BasalMR----------------------------------------------------------------------------------------------
-	/*
-	 * @When("I calculate the basal metabolic rate with an incorrect gender {int}")
-	 * public void
-	 * i_calculate_the_basal_metabolic_rate_with_an_incorrect_gender(Integer int1) {
-	 * // Write code here that turns the phrase above into concrete actions throw
-	 * new io.cucumber.java.PendingException(); }
-	 */
+
 
 	@When("I calculate the basal metabolic rate with an incorrect gender {string}")
 	public void i_calculate_the_basal_metabolic_rate_with_an_incorrect_gender(String string) {
@@ -111,13 +92,7 @@ public class StepDefinition {
 		}
 	}
 
-	/*
-	 * @When("I calculate the basal metabolic rate with an incorrect height {string}"
-	 * ) public void
-	 * i_calculate_the_basal_metabolic_rate_with_an_incorrect_height(String string)
-	 * { // Write code here that turns the phrase above into concrete actions throw
-	 * new io.cucumber.java.PendingException(); }
-	 */
+
 	@When("I calculate the basal metabolic rate with an incorrect weight {int}")
 	public void i_calculate_the_basal_metabolic_rate_with_an_incorrect_weight(Integer int1) {
 		try {
@@ -127,19 +102,7 @@ public class StepDefinition {
 		}
 	}
 
-	/*
-	 * @When("I calculate the basal metabolic rate with an incorrect weight {string}"
-	 * ) public void
-	 * i_calculate_the_basal_metabolic_rate_with_an_incorrect_weight(String string)
-	 * { // Write code here that turns the phrase above into concrete actions throw
-	 * new io.cucumber.java.PendingException(); }
-	 * 
-	 * @When("I calculate the basal metabolic rate for an age with negative value {string}"
-	 * ) public void
-	 * i_calculate_the_basal_metabolic_rate_for_an_age_with_negative_value(String
-	 * string) { // Write code here that turns the phrase above into concrete
-	 * actions throw new io.cucumber.java.PendingException(); }
-	 */
+
 	@Then("the system throws an exception")
 	public void the_system_throws_an_exception() {
 		assertTrue(exception);
@@ -154,13 +117,7 @@ public class StepDefinition {
 		}
 	}
 
-	/*
-	 * @When("I calculate the basal metabolic rate for an age with negative value u"
-	 * ) public void
-	 * i_calculate_the_basal_metabolic_rate_for_an_age_with_negative_value_u() { //
-	 * Write code here that turns the phrase above into concrete actions throw new
-	 * io.cucumber.java.PendingException(); }
-	 */
+
 	@When("I calculate the basal metabolic rate for weight {int} height {int} gender {string} and age {int}")
 	public void i_calculate_the_basal_metabolic_rate_for_weight_height_gender_and_age(Integer int1, Integer int2,
 			String string, Integer int3) throws Exception {

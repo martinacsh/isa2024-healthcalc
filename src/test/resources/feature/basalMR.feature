@@ -27,9 +27,9 @@ Feature: Calculate Basal Metabolic Rate
     Then the program throws an exception
     Examples: 
     	| g |
-      | 6 |
+      | "4" |
       | "s" |
-      | '*' |
+      | "." |
 
 
   @tag2
@@ -41,7 +41,7 @@ Feature: Calculate Basal Metabolic Rate
     	| h |
       | -3 |
       | 0 |
-      | 'f' |
+      | -173 |
       
   @tag3
   Scenario: Invalid weight
@@ -52,7 +52,7 @@ Feature: Calculate Basal Metabolic Rate
     	| w |
       | -15 |
       | 0 |
-      | 'f' |
+      | -70 |
       
   @tag4
   Scenario Outline: Invalid Age

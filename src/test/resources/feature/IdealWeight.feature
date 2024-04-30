@@ -27,9 +27,9 @@ Feature: Calculate Ideal Weight
     Then the program throws an exception
     Examples: 
     	| g |
-      | 3 |
-      | a |
-      |'*'|
+      | "y" |
+      | "_" |
+      | "9" |
 
 
   @tag2
@@ -41,7 +41,7 @@ Feature: Calculate Ideal Weight
     	| h |
       | -3 |
       |  0 |
-      | 'f'|
+      | -180 |
       
       
   @tag3
