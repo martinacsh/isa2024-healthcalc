@@ -48,7 +48,8 @@
 
 ### Apartado 3a - Patrón Adapter
 
-<img width="465" alt="HealthHospitalA" src="https://github.com/martinacsh/isa2024-healthcalc/assets/160426861/fcd55d3a-662e-4ee6-8553-119504e630a5">
+<img width="441" alt="AdapterA" src="https://github.com/martinacsh/isa2024-healthcalc/assets/160426861/2a074929-b622-446c-bf5c-0f23a48a2f3b">
+
 
 
 
