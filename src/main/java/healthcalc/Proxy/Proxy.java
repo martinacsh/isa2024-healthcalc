@@ -5,74 +5,84 @@ import java.util.List;
 import healthcalc.HealthCalc;
 import healthcalc.HealthCalculator;
 
-public class Proxy implements HealthCalc, HealthStats{
+public class Proxy implements HealthCalc, HealthStats {
 	private HealthCalculator calc;
 	private List<Integer> alturas;
 	private List<Float> pesos;
-	private List <Integer> edades;
+	private List<Integer> edades;
 	private List<Float> BMRs;
 	private int numF;
 	private int numM;
 	private int totalPacientes;
-	
-	
-	
+
 	@Override
 	public float idealWeight(int height, char gender) throws Exception {
-		
-		
-		// TODO Auto-generated method stub
-		return 0;
+		alturas.add(height);
+
+		if (gender == 'f') {
+			numF++;
+		} else {
+			numM++;
+		}
+
+		return calc.idealWeight(height, gender);
 	}
 
 	@Override
 	public float basalMetabolicRate(float weight, int height, char gender, int age) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		alturas.add(height);
+		pesos.add(weight);
+		edades.add(age);
+
+		if (gender == 'f') {
+			numF++;
+		} else {
+			numM++;
+		}
+		float bmr = calc.basalMetabolicRate(weight, height, gender, age);
+		//bmr.add(BMRs);
+		return bmr;
 	}
 
 	@Override
 	public float alturaMedia() {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		float media = get_alturaMedia(alturas);
+		return media;
 	}
 
 	@Override
 	public float pesoMedio() {
-		// TODO Auto-generated method stub
-		return 0;
+		float media = get_pesoMedio(pesos);		
+		return media;
 	}
 
 	@Override
 	public float edadMedia() {
-		// TODO Auto-generated method stub
-		return 0;
+		float media = get_edadMedia(edades);
+		return media;
 	}
 
 	@Override
 	public float bmrMedio() {
-		// TODO Auto-generated method stub
-		return 0;
+		float media = get_bmrMedio(BMRs);
+		return media;
 	}
 
 	@Override
 	public int numSexoF() {
-		// TODO Auto-generated method stub
-		return 0;
+
+		return numF;
 	}
 
 	@Override
 	public int numSexoM() {
-		// TODO Auto-generated method stub
-		return 0;
+		return numM;
 	}
 
 	@Override
 	public int numTotalPacientes() {
-		// TODO Auto-generated method stub
-		return 0;
+		return numF + numM;
 	}
-
-
 
 }
