@@ -40,5 +40,20 @@
 <img width="463" alt="InterfazGráfica4" src="https://github.com/martinacsh/isa2024-healthcalc/assets/160426861/2474ab2f-6a7d-4ff2-826a-0adfc6bb7c64">
 
 
+## Practica 6 : Patrones de Diseño
+
+### Apartado 2 - Patrón Singleton
+
+<img width="559" alt="Singleton" src="https://github.com/martinacsh/isa2024-healthcalc/assets/160426861/dc9fd761-741d-4511-8ee7-defd6c025103">
+
+### Apartado 3a - Patrón Adapter
+
+<img width="441" alt="AdapterA" src="https://github.com/martinacsh/isa2024-healthcalc/assets/160426861/2a074929-b622-446c-bf5c-0f23a48a2f3b">
+
+### Apartado 3b - Patrón Proxy
+
+<img width="426" alt="ProxyB" src="https://github.com/martinacsh/isa2024-healthcalc/assets/160426861/f779cbf4-7228-433a-abeb-e8936ec9910d">
+
+
 
 
