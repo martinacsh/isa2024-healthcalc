@@ -1,4 +1,4 @@
-package healthcalc;
+package healthcalc.Adapter;
 
 public interface HealthHospital {
 	

@@ -1,4 +1,6 @@
-package healthcalc;
+package healthcalc.Adapter;
+
+import healthcalc.HealthCalculator;
 
 public class Adapter implements HealthHospital {
 	private HealthCalculator adaptedCalculator;
