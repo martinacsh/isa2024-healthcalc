@@ -1,5 +1,6 @@
 package healthcalc;
 
+
 public class HealthCalculator implements HealthCalc{
 	
 	private static HealthCalculator calc;
