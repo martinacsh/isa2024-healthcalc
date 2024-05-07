@@ -40,20 +40,20 @@ public class Proxy implements HealthCalc, HealthStats {
 			numM++;
 		}
 		float bmr = calc.basalMetabolicRate(weight, height, gender, age);
-		//bmr.add(BMRs);
+		// bmr.add(BMRs);
 		return bmr;
 	}
 
 	@Override
 	public float alturaMedia() {
-		
+
 		float media = get_alturaMedia(alturas);
 		return media;
 	}
 
 	@Override
 	public float pesoMedio() {
-		float media = get_pesoMedio(pesos);		
+		float media = get_pesoMedio(pesos);
 		return media;
 	}
 
@@ -71,7 +71,6 @@ public class Proxy implements HealthCalc, HealthStats {
 
 	@Override
 	public int numSexoF() {
-
 		return numF;
 	}
 
