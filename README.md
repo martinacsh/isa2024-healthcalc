@@ -50,6 +50,10 @@
 
 <img width="441" alt="AdapterA" src="https://github.com/martinacsh/isa2024-healthcalc/assets/160426861/2a074929-b622-446c-bf5c-0f23a48a2f3b">
 
+### Apartado 3b - Patrón Proxy
+
+<img width="426" alt="ProxyB" src="https://github.com/martinacsh/isa2024-healthcalc/assets/160426861/f779cbf4-7228-433a-abeb-e8936ec9910d">
+
 
 
 
