@@ -13,7 +13,7 @@ public class Proxy implements HealthCalc, HealthStats {
 	private List<Float> BMRs;
 	private int numF;
 	private int numM;
-	private int totalPacientes;
+	private Stats stats;
 
 	@Override
 	public float idealWeight(int height, char gender) throws Exception {
@@ -47,25 +47,25 @@ public class Proxy implements HealthCalc, HealthStats {
 	@Override
 	public float alturaMedia() {
 
-		float media = get_alturaMedia(alturas);
+		float media = stats.get_alturaMedia(alturas);
 		return media;
 	}
 
 	@Override
 	public float pesoMedio() {
-		float media = get_pesoMedio(pesos);
+		float media = stats.get_pesoMedio(pesos);
 		return media;
 	}
 
 	@Override
 	public float edadMedia() {
-		float media = get_edadMedia(edades);
+		float media = stats.get_edadMedia(edades);
 		return media;
 	}
 
 	@Override
 	public float bmrMedio() {
-		float media = get_bmrMedio(BMRs);
+		float media = stats.get_bmrMedio(BMRs);
 		return media;
 	}
 

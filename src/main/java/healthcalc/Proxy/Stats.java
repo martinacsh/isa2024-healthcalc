@@ -15,10 +15,10 @@ public class Stats {
 		return media;
 	}
 	
-	public float get_pesoMedio(List<Integer> pesos) {
+	public float get_pesoMedio(List<Float> pesos) {
 		int cont = 0;
 		int total = 0;
-		for(int peso : pesos) {
+		for(Float peso : pesos) {
 			total += peso;
 			cont += 1;
 		}
@@ -39,7 +39,7 @@ public class Stats {
 	}
 
 	
-	public float bmrMedio(List<Float> BMRs) {
+	public float get_bmrMedio(List<Float> BMRs) {
 		int cont = 0;
 		int total = 0;
 		for(float bmr : BMRs) {
