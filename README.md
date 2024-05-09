@@ -44,7 +44,7 @@
 
 ### Apartado 2 - Patrón Singleton
 
-<img width="559" alt="Singleton" src="https://github.com/martinacsh/isa2024-healthcalc/assets/160426861/dc9fd761-741d-4511-8ee7-defd6c025103">
+<img width="441" alt="Singleton" src="https://github.com/martinacsh/isa2024-healthcalc/assets/160426861/d92133b5-8e22-43f9-9ffb-48c9eecd4fa8">
 
 ### Apartado 3a - Patrón Adapter
 
