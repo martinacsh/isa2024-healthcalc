@@ -40,7 +40,7 @@ public class Proxy implements HealthCalc, HealthStats {
 			numM++;
 		}
 		float bmr = calc.basalMetabolicRate(weight, height, gender, age);
-		// bmr.add(BMRs);
+		BMRs.add(bmr);
 		return bmr;
 	}
 
