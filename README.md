@@ -44,16 +44,17 @@
 
 ### Apartado 2 - Patrón Singleton
 
-<img width="441" alt="Singleton" src="https://github.com/martinacsh/isa2024-healthcalc/assets/160426861/d92133b5-8e22-43f9-9ffb-48c9eecd4fa8">
+<img width="599" alt="Singleton" src="https://github.com/martinacsh/isa2024-healthcalc/assets/160426861/168dafde-95ce-4596-89cf-21232d6489c8">
+
 
 ### Apartado 3a - Patrón Adapter
 
-<img width="617" alt="AdapterA" src="https://github.com/martinacsh/isa2024-healthcalc/assets/160426861/46f747b5-ded4-4404-9f6a-2aae5b592a37">
-
+<img width="620" alt="AdapterA" src="https://github.com/martinacsh/isa2024-healthcalc/assets/160426861/b043a40b-aaf6-4ffd-99b8-2f558d28c1cb">
 
 ### Apartado 3b - Patrón Proxy
 
-<img width="523" alt="ProxyB" src="https://github.com/martinacsh/isa2024-healthcalc/assets/160426861/ea891a15-c515-4bd5-8d42-50bfe205ac64">
+<img width="507" alt="ProxyB" src="https://github.com/martinacsh/isa2024-healthcalc/assets/160426861/72a76389-a039-485f-acec-97e2995e5b22">
+
 
 
 
