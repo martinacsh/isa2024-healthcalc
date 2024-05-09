@@ -48,7 +48,8 @@
 
 ### Apartado 3a - Patrón Adapter
 
-<img width="441" alt="AdapterA" src="https://github.com/martinacsh/isa2024-healthcalc/assets/160426861/2a074929-b622-446c-bf5c-0f23a48a2f3b">
+<img width="617" alt="AdapterA" src="https://github.com/martinacsh/isa2024-healthcalc/assets/160426861/46f747b5-ded4-4404-9f6a-2aae5b592a37">
+
 
 ### Apartado 3b - Patrón Proxy
 
