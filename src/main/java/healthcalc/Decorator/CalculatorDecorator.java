@@ -16,7 +16,6 @@ public class CalculatorDecorator implements HealthCalc {
 
 	@Override
 	public float basalMetabolicRate(float weight, int height, char gender, int age) throws Exception {
-		//redondear la altura pasarla a piesxdd
 		return wrappedCalculator.basalMetabolicRate(weight, height, gender, age);
 				
 	}

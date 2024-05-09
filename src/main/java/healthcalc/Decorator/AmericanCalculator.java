@@ -18,8 +18,11 @@ public class AmericanCalculator extends CalculatorDecorator{
 	public float basalMetabolicRate(float weight, int height, char gender, int age)throws Exception {
 		float feet = (float) (height/30.48);
 		float lbs = (float) (weight/0.453592);
+		float bmr = 0;
+		System.out.print("La persona con altura " + height +  "pies " +  "y " + weight +  "libras " + "tiene un BMR de " + bmr);
+		System.out.print("The person with a height of " + height +  "feet " +  "y " + weight +  "pounds " + "has a bmr of " + bmr);
 
-		return 0;
+		return bmr;
 	}
 	
 	
