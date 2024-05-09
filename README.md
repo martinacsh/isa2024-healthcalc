@@ -53,7 +53,8 @@
 
 ### Apartado 3b - Patrón Proxy
 
-<img width="520" alt="ProxyB" src="https://github.com/martinacsh/isa2024-healthcalc/assets/160426861/a3ced3d5-0f42-4ecc-80bb-9a33070ba631">
+<img width="523" alt="ProxyB" src="https://github.com/martinacsh/isa2024-healthcalc/assets/160426861/ea891a15-c515-4bd5-8d42-50bfe205ac64">
+
 
 
 
