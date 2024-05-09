@@ -1,22 +1,22 @@
 package healthcalc.Decorator;
 
-import healthcalc.HealthCalc;
+import healthcalc.Adapter.HealthHospital;
 
-public class CalculatorDecorator implements HealthCalc {
-	HealthCalc wrappedCalculator;
+public class CalculatorDecorator implements HealthHospital {
+	HealthHospital wrappedCalculator;
 
-	public CalculatorDecorator(HealthCalc wrappedCalc) {
+	public CalculatorDecorator(HealthHospital wrappedCalc) {
 		wrappedCalculator = wrappedCalc;
 	}
 
 	@Override
-	public float idealWeight(int height, char gender) throws Exception {
-		return wrappedCalculator.idealWeight(height, gender);
+	public float idealWeightA(char gender, float height) throws Exception {
+		return wrappedCalculator.idealWeightA(gender, height);
 	}
 
 	@Override
-	public float basalMetabolicRate(float weight, int height, char gender, int age) throws Exception {
-		return wrappedCalculator.basalMetabolicRate(weight, height, gender, age);
+	public float bmrA(char gender, int age, float height, int weight) throws Exception {
+		return wrappedCalculator.bmrA(gender, age, height, weight);
 				
 	}
 
