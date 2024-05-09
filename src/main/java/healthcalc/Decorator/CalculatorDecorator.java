@@ -3,7 +3,7 @@ package healthcalc.Decorator;
 import healthcalc.Adapter.HealthHospital;
 
 public class CalculatorDecorator implements HealthHospital {
-	HealthHospital wrappedCalculator;
+	 protected HealthHospital wrappedCalculator;
 
 	public CalculatorDecorator(HealthHospital wrappedCalc) {
 		wrappedCalculator = wrappedCalc;
