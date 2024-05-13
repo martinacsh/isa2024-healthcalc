@@ -10,7 +10,7 @@ public class ImperialOutput extends OutputDecorator{
 	}
 
 
-	protected void mensaje(float height, int weight, double bmr) {
+	protected void output(float height, int weight, double bmr) {
 		System.out.print("La persona con altura " + height + "pies " + "y peso " + weight + "libras " + "tiene un bmr de " + bmr);
 		System.out.print("The person with a height of " + height + "feet " + "and a weight of " + weight + "pounds " + "has a bmr of " + bmr);
 		

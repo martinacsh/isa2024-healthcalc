@@ -8,7 +8,7 @@ public class ISOutput extends OutputDecorator{
 		super(wrappedCalc);
 	}
 
-	protected void mensaje(float height, int weight, double bmr) {
+	protected void output(float height, int weight, double bmr) {
 		System.out.print("La persona con altura " + height + " m " + "y peso " + weight + "kg " + "tiene un bmr de " + bmr);
 		System.out.print("The person with a height of " + height + "m " + "and a weight of " + weight + "kg " + "has a bmr of " + bmr);
 		
