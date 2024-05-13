@@ -28,7 +28,7 @@ public class HealthCalculator implements HealthCalc{
         if(gender == 'm'){
             resultado = (height - 100) - ((height - 150) / 4f);
         }
-        if(gender != 'm' || gender != 'w'){
+        if(gender != 'm' && gender != 'w'){
         throw new Exception("El género proporcionado no es válido");
         }
 
@@ -38,7 +38,7 @@ public class HealthCalculator implements HealthCalc{
         return resultado;
     }
 
-//age height weight
+
 public float basalMetabolicRate(float weight, int height, char gender, int age) throws Exception {
     float resultado = 0;
     if(age <= 0){
@@ -51,7 +51,7 @@ public float basalMetabolicRate(float weight, int height, char gender, int age) 
         throw new Exception("El peso proporcionado no es válido");
 
     }
-    if(gender != 'm' || gender != 'w'){
+    if(gender != 'm' && gender != 'w'){
 
         throw new Exception("El género proporcionado no es válido");
         }
