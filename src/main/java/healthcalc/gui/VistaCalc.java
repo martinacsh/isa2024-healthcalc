@@ -1,6 +1,7 @@
 package healthcalc.gui;
 
 import java.awt.EventQueue;
+import healthcalc.Gender;
 import java.awt.Font;
 
 import javax.swing.JFrame;

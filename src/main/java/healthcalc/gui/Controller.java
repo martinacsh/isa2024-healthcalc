@@ -1,6 +1,7 @@
 package healthcalc.gui;
 
 import healthcalc.HealthCalculator;
+import healthcalc.Gender;
 
 
 import java.awt.event.ActionEvent;
