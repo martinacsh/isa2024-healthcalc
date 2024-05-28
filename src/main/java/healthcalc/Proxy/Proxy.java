@@ -1,6 +1,7 @@
 package healthcalc.Proxy;
 
 import java.util.List;
+import healthcalc.Gender;
 
 import healthcalc.HealthCalc;
 import healthcalc.HealthCalculator;
@@ -16,10 +17,10 @@ public class Proxy implements HealthCalc, HealthStats {
 	private Stats stats;
 
 	@Override
-	public float idealWeight(int height, char gender) throws Exception {
+	public float idealWeight(int height, Gender gender) throws Exception {
 		alturas.add(height);
 
-		if (gender == 'f') {
+		if (gender == Gender.FEMALE) {
 			numF++;
 		} else {
 			numM++;
@@ -29,12 +30,12 @@ public class Proxy implements HealthCalc, HealthStats {
 	}
 
 	@Override
-	public float basalMetabolicRate(float weight, int height, char gender, int age) throws Exception {
+	public float basalMetabolicRate(float weight, int height, Gender gender, int age) throws Exception {
 		alturas.add(height);
 		pesos.add(weight);
 		edades.add(age);
 
-		if (gender == 'f') {
+		if (gender == Gender.FEMALE) {
 			numF++;
 		} else {
 			numM++;

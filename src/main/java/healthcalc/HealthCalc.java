@@ -18,7 +18,7 @@ public interface HealthCalc {
 	 * @return 		 	The ideal weight of the person (kg).
 	 * @throws Exception 
 	 */
-	public float idealWeight(int height, char gender) throws Exception;
+	public float idealWeight(int height, Gender gender) throws Exception;
 	
 
 	
@@ -34,5 +34,5 @@ public interface HealthCalc {
 	 * @return	  		The Basal Metabolic Rate of the person.
 	 * @throws Exception
 	 */
-	public float basalMetabolicRate(float weight, int height, char gender, int age) throws Exception;
+	public float basalMetabolicRate(float weight, int height, Gender gender, int age) throws Exception;
 }

@@ -239,12 +239,12 @@ public class VistaCalc extends JFrame {
 
 	}
 	
-	public char getGender() {
+	public Gender getGender() {
 		if(radioButtonFemale.isSelected()) {
-			return 'w';
+			return Gender.FEMALE;
 		} else
 		{
-			return 'm';
+			return Gender.MALE;
 		}
 		
 	}

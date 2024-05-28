@@ -23,7 +23,7 @@ public class Controller implements ActionListener {
 		if (mensaje.equals("Calculate Ideal Weight")) {
 			
 			int height = vista.getHeight();
-			char gender = vista.getGender();
+			Gender gender = vista.getGender();
 			try {
 				float result = modelo.idealWeight(height, gender);	
 				vista.setIdealWeight(result);
@@ -35,7 +35,7 @@ public class Controller implements ActionListener {
 			
 		}else if(mensaje.equals("Calculate BMR")) {
 			int height = vista.getHeight();
-			char gender = vista.getGender();
+			Gender gender = vista.getGender();
 			int age = vista.getAge();
 			float weight = vista.getWeight();
 			try {
