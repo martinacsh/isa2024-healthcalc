@@ -1,24 +1,27 @@
 package healthcalc.Proxy;
 
-import java.util.List;
+
 import healthcalc.Gender;
 
 import healthcalc.HealthCalc;
 import healthcalc.HealthCalculator;
+import healthcalc.Person;
+
 
 public class Proxy implements HealthCalc, HealthStats {
 	private HealthCalculator calc;
-	private List<Integer> alturas;
-	private List<Float> pesos;
-	private List<Integer> edades;
-	private List<Float> BMRs;
+	private float alturas;
+	private int pesos;
+	private int edades;
+	private float BMRs;
 	private int numF;
 	private int numM;
-	private Stats stats;
 
 	@Override
-	public float idealWeight(int height, Gender gender) throws Exception {
-		alturas.add(height);
+	public float idealWeight(Person person) throws Exception {
+		float height = person.height();
+		alturas += height;
+		Gender gender = person.gender();
 
 		if (gender == Gender.FEMALE) {
 			numF++;
@@ -26,47 +29,53 @@ public class Proxy implements HealthCalc, HealthStats {
 			numM++;
 		}
 
-		return calc.idealWeight(height, gender);
+		return calc.idealWeight(person);
 	}
 
 	@Override
-	public float basalMetabolicRate(float weight, int height, Gender gender, int age) throws Exception {
-		alturas.add(height);
-		pesos.add(weight);
-		edades.add(age);
+	public float basalMetabolicRate(Person person) throws Exception {
+		float height = person.height();
+		Gender gender = person.gender();
+		float weight = person.weight();
+		int age = person.age();
+
+		alturas += height;
+		pesos += weight;
+		edades += age;
 
 		if (gender == Gender.FEMALE) {
 			numF++;
 		} else {
 			numM++;
 		}
-		float bmr = calc.basalMetabolicRate(weight, height, gender, age);
-		BMRs.add(bmr);
+
+		float bmr = calc.basalMetabolicRate(person);
+		BMRs += bmr;
 		return bmr;
 	}
 
 	@Override
 	public float alturaMedia() {
 
-		float media = stats.get_alturaMedia(alturas);
+		float media = alturas / numTotalPacientes();
 		return media;
 	}
 
 	@Override
 	public float pesoMedio() {
-		float media = stats.get_pesoMedio(pesos);
+		float media = pesos / numTotalPacientes();
 		return media;
 	}
 
 	@Override
 	public float edadMedia() {
-		float media = stats.get_edadMedia(edades);
+		float media = edades / numTotalPacientes();
 		return media;
 	}
 
 	@Override
 	public float bmrMedio() {
-		float media = stats.get_bmrMedio(BMRs);
+		float media = BMRs / numTotalPacientes();
 		return media;
 	}
 
