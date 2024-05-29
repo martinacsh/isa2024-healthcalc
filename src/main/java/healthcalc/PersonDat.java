@@ -34,7 +34,7 @@ public class PersonDat implements Person {
 	public PersonDat(float height, Gender gender) {
 		this.height = height;
 		this.gender = gender;
-		weight = 0;
+		weight = 1;
 		age = 0;
 	}
 

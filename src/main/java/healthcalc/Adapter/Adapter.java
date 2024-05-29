@@ -2,25 +2,27 @@ package healthcalc.Adapter;
 
 import healthcalc.Gender;
 import healthcalc.HealthCalculator;
+import healthcalc.Person;
+import healthcalc.PersonDat;
 
 public class Adapter implements HealthHospital {
 	private HealthCalculator adaptedCalculator;
 
 	public float idealWeightA(char gender, float height) throws Exception {
-		height *= 100;
-		int alturaEnCent = (int) height;
 
-		return adaptedCalculator.idealWeight(alturaEnCent, getGender(gender));
+		Person persona = new PersonDat((height * 100), getGender(gender));
+
+		return adaptedCalculator.idealWeight(persona);
 	}
 
 	public float bmrA(char gender, int age, float height, int weight) throws Exception {
-		height *= 100;
-		int alturaEnCent = (int) height;
 
 		float pesoEnKg = (float) weight;
-		pesoEnKg /= 1000;
+		pesoEnKg /= 1000f;
+		
+		Person person = new PersonDat((height * 100), getGender(gender), pesoEnKg, age);
 
-		return adaptedCalculator.basalMetabolicRate(pesoEnKg, alturaEnCent, getGender(gender), age);
+		return adaptedCalculator.basalMetabolicRate(person);
 	}
 
 	private Gender getGender(char g) {
