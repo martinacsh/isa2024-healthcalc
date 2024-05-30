@@ -10,7 +10,7 @@ public class AmericanCalculator extends CalculatorDecorator {
 	}
 
 	@Override
-	public float idealWeightA(char gender, float height) throws Exception {
+	public double idealWeightA(char gender, float height) throws Exception {
 		float alturaMetros = (float) (height * 0.3048);
 		return wrappedCalculator.idealWeightA(gender, alturaMetros);
 	}

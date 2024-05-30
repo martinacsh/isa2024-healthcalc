@@ -10,7 +10,7 @@ public abstract class OutputDecorator implements HealthHospital{
 	}
 
 	@Override
-	public float idealWeightA(char gender, float height) throws Exception {
+	public double idealWeightA(char gender, float height) throws Exception {
 		
 		return wrappedCalc.idealWeightA(gender, height);
 	}

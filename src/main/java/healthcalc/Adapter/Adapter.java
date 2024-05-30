@@ -8,11 +8,11 @@ import healthcalc.PersonDat;
 public class Adapter implements HealthHospital {
 	private HealthCalculator adaptedCalculator;
 
-	public float idealWeightA(char gender, float height) throws Exception {
+	public double idealWeightA(char gender, float height) throws Exception {
 
-		Person persona = new PersonDat((height * 100), getGender(gender));
+		Person person = new PersonDat((height * 100), getGender(gender));
 
-		return adaptedCalculator.idealWeight(persona);
+		return adaptedCalculator.getIdealBodyWeight(person);
 	}
 
 	public float bmrA(char gender, int age, float height, int weight) throws Exception {

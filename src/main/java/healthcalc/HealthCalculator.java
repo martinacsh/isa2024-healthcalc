@@ -1,6 +1,6 @@
 package healthcalc;
 
-public class HealthCalculator implements HealthCalc {
+public class HealthCalculator implements HealthCalc, CardiovascularMetrics {
 
 	private static HealthCalculator calc;
 
@@ -15,19 +15,19 @@ public class HealthCalculator implements HealthCalc {
 		return calc;
 	}
 
-	public float idealWeight(Person person) throws Exception {
+	public double getIdealBodyWeight(Person person) throws Exception {
 		float height = person.height();
 		Gender gender = person.gender();
-		float resultado = 0;
+		double resultado = 0;
 
 		if (height <= 0) {
 			throw new Exception("La altura proporcionada no es válida");
 		}
 		if (gender == Gender.FEMALE) {
-			resultado = (height - 100) - ((height - 150) / 2.5f);
+			resultado = (height - 100) - ((height - 150) / 2.5d);
 		}
 		if (gender == Gender.MALE) {
-			resultado = (height - 100) - ((height - 150) / 4f);
+			resultado = (height - 100) - ((height - 150) / 4d);
 		}
 		if (gender != Gender.MALE && gender != Gender.FEMALE) {
 			throw new Exception("El género proporcionado no es válido");
@@ -75,4 +75,11 @@ public class HealthCalculator implements HealthCalc {
 
 		return resultado;
 	}
+
+	@Override
+	public float idealWeight(Person person) throws Exception {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

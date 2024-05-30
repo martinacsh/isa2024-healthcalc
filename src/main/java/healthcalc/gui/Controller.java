@@ -27,7 +27,7 @@ public class Controller implements ActionListener {
 			Gender gender = vista.getGender();
 			Person person = new PersonDat(height, gender);
 			try {
-				float result = modelo.idealWeight(person);
+				double result = modelo.getIdealBodyWeight(person);
 				vista.setIdealWeight(result);
 
 			} catch (Exception e) {

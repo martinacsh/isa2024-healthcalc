@@ -269,7 +269,7 @@ public class VistaCalc extends JFrame {
 		JOptionPane.showMessageDialog(null, msg, "error", JOptionPane.ERROR_MESSAGE);
 	}
 	
-	public void setIdealWeight(float resultado){
+	public void setIdealWeight(double resultado){
 		weightTextField.setText(String.valueOf(resultado)+" kg");
 	}
 	

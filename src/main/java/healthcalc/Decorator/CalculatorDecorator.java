@@ -10,7 +10,7 @@ public class CalculatorDecorator implements HealthHospital {
 	}
 
 	@Override
-	public float idealWeightA(char gender, float height) throws Exception {
+	public double idealWeightA(char gender, float height) throws Exception {
 		return wrappedCalculator.idealWeightA(gender, height);
 	}
 
