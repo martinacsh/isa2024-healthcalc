@@ -11,7 +11,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 @DisplayName("Tests para la calculadora de salud.")
 public class HealthCalcTest {
-	private HealthCalc obj;
+	private MetabolicMetrics obj;
 	private CardiovascularMetrics cardio;
 
 	@BeforeEach
@@ -19,7 +19,6 @@ public class HealthCalcTest {
 		HealthCalculator obj = HealthCalculator.getCalculator();
 		HealthCalculator cardio = HealthCalculator.getCalculator();
 	}
-	
 
 	// -------------------Tests
 	// idealWeight-------------------------------------------
@@ -126,7 +125,7 @@ public class HealthCalcTest {
 	@DisplayName("basalMR() todos los argumentos correctos, no lanza exc")
 	public void test5_basalMR_correctArguments(float weight, float height, Gender gender, int age) throws Exception {
 		assertDoesNotThrow(() -> {
-			float result = obj.basalMetabolicRate(new PersonDat(height, gender, weight, age));
+			double result = obj.basalMetabolicRate(new PersonDat(height, gender, weight, age));
 			assertTrue(result > 0);
 		});
 	}

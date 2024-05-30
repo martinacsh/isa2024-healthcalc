@@ -1,6 +1,6 @@
 package healthcalc;
 
-public class HealthCalculator implements HealthCalc, CardiovascularMetrics {
+public class HealthCalculator implements MetabolicMetrics, CardiovascularMetrics {
 
 	private static HealthCalculator calc;
 
@@ -39,13 +39,13 @@ public class HealthCalculator implements HealthCalc, CardiovascularMetrics {
 		return resultado;
 	}
 
-	public float basalMetabolicRate(Person person) throws Exception {
+	public double basalMetabolicRate(Person person) throws Exception {
 
 		float weight = person.weight();
 		float height = person.height();
 		Gender gender = person.gender();
 		int age = person.age();
-		float resultado = 0;
+		double resultado = 0;
 		if (age <= 0) {
 			throw new Exception("La edad proporcionada no es válida");
 		}
@@ -76,10 +76,6 @@ public class HealthCalculator implements HealthCalc, CardiovascularMetrics {
 		return resultado;
 	}
 
-	@Override
-	public float idealWeight(Person person) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+
 
 }

@@ -3,12 +3,12 @@ package healthcalc.Proxy;
 
 import healthcalc.Gender;
 
-import healthcalc.HealthCalc;
+import healthcalc.MetabolicMetrics;
 import healthcalc.HealthCalculator;
 import healthcalc.Person;
 
 
-public class Proxy implements HealthCalc, HealthStats {
+public class Proxy implements MetabolicMetrics, HealthStats {
 	private HealthCalculator calc;
 	private float alturas;
 	private int pesos;
