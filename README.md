@@ -29,7 +29,7 @@
 <img width="242" alt="registro_commits" src="https://github.com/martinacsh/isa2024-healthcalc/assets/160426861/3d57b48e-1a12-45b4-ad1c-13e962c53777">
 
 
-## Practica 4
+## Práctica 4
 
 ### Borrador GUI
 
@@ -55,10 +55,94 @@
 
 <img width="507" alt="ProxyB" src="https://github.com/martinacsh/isa2024-healthcalc/assets/160426861/72a76389-a039-485f-acec-97e2995e5b22">
 
+## Práctica 7
+
+### Enum Gender
+
+#### Bad smell: Tipo de variable gender ineficiente.
+Refactoring aplicado: Modificación del tipo de dato de la variable gender.
+Tipo: Refactoring de atributo.
+
+#### Descripción de cambios:
+Se crea una clase enumerada en el paquete helthcalc con dos componentes, male y female, que representarán
+los dos géneros posibles a introducir como parámetro en la calculadora. Sustituirá al tipo char de la 
+variable gender, siendo Gender el nuevo tipo enumerado.
+
+#### Esquema de cambios:
+Creación de Gender en healthcalc.
+Sustitución de char por Gender en 5 clases.
+Reemplazo 'w' por Gender.FEMALE en métodos idealweight y bmr.
+Reemplazo 'm' por Gender.MALE en métodos idealweight y bmr.
+Añadir import healthcalc.Gender; en VistaCalc, Controller, Adapter y Proxy.
+Crear un método en Adapter para determinar el valor de Gender.
+Añadir a lo métodos idealweight y basalMetabolicRate: getGender(gender)para que el tipo de los datos sea correcto.
 
 
+### Interfaz Persona
+
+#### Bad smell: funciones que reciben demasiados parámetros
+Refactoring aplicado: Reemplazar los parámetros por un objeto.
+Tipo: Refactoring de clase.
+
+#### Descripción de cambios:
+Se crea en el paquete healthcalc una interfaz Person y una clase PersonDat donde se guardarán los argumentos utilizados en 
+idealweight y basalMetabolicRate como atributos. Además, en esta clase se crea un constructor para cada
+uno de estos métodos. Cada método que los llame deberá también ser modificado para que los tipos de los parámetros
+cuadren.
+
+#### Esquema de cambios:
+Creación de la interfaz Person y la lase PersonDat.
+Sustitución de los parámetros por su correspondiente objeto tipo Person en los métodos idealWeight y 
+basalMetabolicRate en toda clase que aparezcan.
+En la clase HealthCalculator, ahora los métodos reciben un objeto person del que se extraen los parámetros a utilizar
+para los cálculos.
+En la interfaz HealthCalc, se definen los métodos de forma que reciban un objeto person como parámetro.
+En la clase Adapter, Controller crear un objeto persona con los parámetros recibidos en cada método para poder pasárselo al
+idealweight y bmr 'originales'.
+Adición de import healthcalc.Person y healthcalc.PersonDat a Adapter, Controller
+En la clase Proxy, se cambiarán los atributos de forma que las medias puedan calcularse correctamente y así evitar
+tener que modificar de más el resto del código. Se eliminará la clase Stats, pues con los cambios realizados,
+su existencia queda obsoleta. También se eliminará el import innecesario para List.
+Modificación de los tests para que los tipos de los parámetros coincidan.
 
 
+### Cardiovascular Metrics
+
+#### Bad Smell: Interfaz con demasiadas responsabilidades.
+Refactoring aplicado: Segregación de interfaces.
+Tipo: Refactorización de clase.
+
+#### Descripción de cambios:
+Se crea la interfaz CardiovascularMetrics con el método getIdealBodyWheigh. Éste sustituirá a IdealWeight en la implementación
+HealthCalculator, que implementará la nueva interfaz. Toda clase que utilice este método tendrá que ser modificada con su nuevo
+nombre. También se cambiarán los float a double, ya que getIdealBodyWeight devuelve un double.
+
+#### Esquema de cambios:
+Creación de la interfaz CardioVascularMetrics.
+Healthcalculator implements CardiovascularMetrics.
+Reemplazo de idealWeight por getIdealBodyWeight en HealthCalculator, Adapter, Controller, Proxy y HealthCalcTest.
+Proxy implements CardiovascularMetrics.
+Cambiar el tipo del resultado a double en toda clase que se utilice getIdealBodyWeight, también en la interfaz HealthHospital y
+en la clase VistaCalc.
+En HealthCalc test, añadir un atributo tipo CardiovascularMetrics para poder aplicar el método idealBodyWeight, cambiar
+los float a double.
 
 
+### Metabolic Metrics
+
+#### Bad Smell: Interfaz con demasiadas responsabilidades.
+Refactoring aplicado: Segregación de interfaces.
+Tipo: Refactorización de clase.
+
+#### Descripción de cambios:
+Mediante la herramienta refactor que nos ofrece eclipse, se renombra la interfaz HealthCalc, que pasa a llamarse 
+MetabolicMetrics. Tendrá el método basalMetabolicRate, el mismo nombre de antes, la única diferencia es que devolverá un 
+double. Éste sustituirá a basalMetabolicRate():float en la implementación HealthCalculator, que implementará la nueva 
+interfaz. Toda clase que utilice este método tendrá que ser modificada con su nuevo tipo, el nombre es el mismo.
+
+#### Esquema de cambios:
+Renombrar la interfaz HealthCalc, que pasará a ser Healthcalculator.
+En los HealthCalcTest, cambiar el tipo del atributo obj a MetabolicMetrics. También cambiar los float a double.
+Sustituir los float necesarios a double en Controller y en VistaCalc (setBMR()). También en HealthHospital, Adapter, 
+CalculatorDecorator... También en los tests.
 
