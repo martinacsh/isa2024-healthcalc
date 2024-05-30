@@ -42,7 +42,7 @@ public class Controller implements ActionListener {
 			float weight = vista.getWeight();
 			Person person = new PersonDat(height, gender, weight, age);
 			try {
-				float resultado = modelo.basalMetabolicRate(person);
+				double resultado = modelo.basalMetabolicRate(person);
 				vista.setBMR(resultado);
 
 			} catch (Exception e) {

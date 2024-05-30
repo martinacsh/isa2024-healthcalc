@@ -273,7 +273,7 @@ public class VistaCalc extends JFrame {
 		weightTextField.setText(String.valueOf(resultado)+" kg");
 	}
 	
-	public void setBMR(float resultado) {
+	public void setBMR(double resultado) {
 		textFieldBMR.setText(String.valueOf(resultado)+" calorías por día");
 	}
 	
