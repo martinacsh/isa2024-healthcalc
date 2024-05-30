@@ -12,39 +12,42 @@ import org.junit.jupiter.params.provider.CsvSource;
 @DisplayName("Tests para la calculadora de salud.")
 public class HealthCalcTest {
 	private HealthCalc obj;
+	private CardiovascularMetrics cardio;
 
 	@BeforeEach
 	public void init() {
 		HealthCalculator obj = HealthCalculator.getCalculator();
+		HealthCalculator cardio = HealthCalculator.getCalculator();
 	}
+	
 
 	// -------------------Tests
 	// idealWeight-------------------------------------------
 
 	@ParameterizedTest
 	@CsvSource({ "'2'", "'*'", "'n'", "'_'", "7" })
-	@DisplayName("idealWeight() argumento género no válido")
+	@DisplayName("getIdealBodyWeight() argumento género no válido")
 	public void test1_idealWeight_gender(Gender gender) throws Exception {
 		assertThrows(Exception.class, () -> {
-			obj.idealWeight(new PersonDat(173, gender));
+			cardio.getIdealBodyWeight(new PersonDat(173, gender));
 		});
 	}
 
 	@ParameterizedTest
 	@CsvSource({ "-1, 'm'", "0, 'w'", "-20, 'w'", "-1, 'w'", "0, 'm'" })
-	@DisplayName("idealWeight() argumento altura no válido")
+	@DisplayName("getIdealBodyWeight() argumento altura no válido")
 	public void test2_idealWeight_height(int height, Gender gender) throws Exception {
 		assertThrows(Exception.class, () -> {
-			obj.idealWeight(new PersonDat(height, gender));
+			cardio.getIdealBodyWeight(new PersonDat(height, gender));
 		});
 	}
 
 	@ParameterizedTest
 	@CsvSource({ "84, 'm'", "67, 'w'", "187, 'm'", "173, 'w'" })
-	@DisplayName("idealWeight() argumentos válidos")
+	@DisplayName("getIdealBodyWeight() argumentos válidos")
 	public void test3_IdealWeight_correctArguments(float height, Gender gender) throws Exception {
 		assertDoesNotThrow(() -> {
-			float resultado = obj.idealWeight(new PersonDat(height, gender));
+			double resultado = cardio.getIdealBodyWeight(new PersonDat(height, gender));
 			assertTrue(resultado > 0);
 		});
 	}
@@ -54,7 +57,7 @@ public class HealthCalcTest {
 	@DisplayName("IW menor que altura ")
 	public void test_4_idealWeight_lessThanHeight(float height, Gender gender) throws Exception {
 		assertDoesNotThrow(() -> {
-			float resultado = obj.idealWeight(new PersonDat(height, gender));
+			double resultado = cardio.getIdealBodyWeight(new PersonDat(height, gender));
 			assertTrue(resultado < height);
 		});
 	}
@@ -64,7 +67,7 @@ public class HealthCalcTest {
 	@DisplayName("IW menor o igual a height-100 para height<=150 cm")
 	public void test5_idealWeight_above150(float height, Gender gender) throws Exception {
 		assertDoesNotThrow(() -> {
-			float resultado = obj.idealWeight(new PersonDat(height, gender));
+			double resultado = cardio.getIdealBodyWeight(new PersonDat(height, gender));
 			assertTrue(resultado <= height - 100);
 		});
 	}
@@ -74,7 +77,7 @@ public class HealthCalcTest {
 	@DisplayName("Alturas límite lanzan excepción")
 	public void test6_idealWeight_heightThreshold(float height, Gender gender) throws Exception {
 		assertThrows(Exception.class, () -> {
-			obj.idealWeight(new PersonDat(height, gender));
+			cardio.getIdealBodyWeight(new PersonDat(height, gender));
 		});
 	}
 
