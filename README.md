@@ -55,7 +55,7 @@
 
 <img width="507" alt="ProxyB" src="https://github.com/martinacsh/isa2024-healthcalc/assets/160426861/72a76389-a039-485f-acec-97e2995e5b22">
 
-## Práctica 7
+## Práctica 7: Refactorings
 
 ### Enum Gender
 
