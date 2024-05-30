@@ -15,7 +15,7 @@ public class CalculatorDecorator implements HealthHospital {
 	}
 
 	@Override
-	public float bmrA(char gender, int age, float height, int weight) throws Exception {
+	public double bmrA(char gender, int age, float height, int weight) throws Exception {
 		return wrappedCalculator.bmrA(gender, age, height, weight);
 				
 	}

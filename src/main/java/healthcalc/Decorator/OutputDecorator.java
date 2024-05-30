@@ -16,8 +16,8 @@ public abstract class OutputDecorator implements HealthHospital{
 	}
 
 	@Override
-	public float bmrA(char gender, int age, float height, int weight) throws Exception {
-		float bmr = wrappedCalc.bmrA(gender, age, height, weight);
+	public double bmrA(char gender, int age, float height, int weight) throws Exception {
+		double bmr = wrappedCalc.bmrA(gender, age, height, weight);
 		output(height, weight, bmr);
 		return bmr;
 	}

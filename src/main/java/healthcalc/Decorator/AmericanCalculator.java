@@ -16,7 +16,7 @@ public class AmericanCalculator extends CalculatorDecorator {
 	}
 
 	@Override
-	public float bmrA(char gender, int age, float height, int weight) throws Exception {
+	public double bmrA(char gender, int age, float height, int weight) throws Exception {
 		float alturaMetros = (float) (height * 0.3048);
 		int pesoLibras = (int) (weight * 453.592);
 		return wrappedCalculator.bmrA(gender, age, alturaMetros, pesoLibras);

@@ -15,7 +15,7 @@ public class Adapter implements HealthHospital {
 		return adaptedCalculator.getIdealBodyWeight(person);
 	}
 
-	public float bmrA(char gender, int age, float height, int weight) throws Exception {
+	public double bmrA(char gender, int age, float height, int weight) throws Exception {
 
 		float pesoEnKg = (float) weight;
 		pesoEnKg /= 1000f;

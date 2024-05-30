@@ -1,6 +1,7 @@
 package healthcalc.Proxy;
 
 
+import healthcalc.CardiovascularMetrics;
 import healthcalc.Gender;
 
 import healthcalc.MetabolicMetrics;
@@ -8,7 +9,7 @@ import healthcalc.HealthCalculator;
 import healthcalc.Person;
 
 
-public class Proxy implements MetabolicMetrics, HealthStats {
+public class Proxy implements CardiovascularMetrics, MetabolicMetrics, HealthStats {
 	private HealthCalculator calc;
 	private float alturas;
 	private int pesos;
@@ -18,7 +19,7 @@ public class Proxy implements MetabolicMetrics, HealthStats {
 	private int numM;
 
 	@Override
-	public float idealWeight(Person person) throws Exception {
+	public double getIdealBodyWeight(Person person) throws Exception {
 		float height = person.height();
 		alturas += height;
 		Gender gender = person.gender();
@@ -29,11 +30,11 @@ public class Proxy implements MetabolicMetrics, HealthStats {
 			numM++;
 		}
 
-		return calc.idealWeight(person);
+		return calc.getIdealBodyWeight(person);
 	}
 
 	@Override
-	public float basalMetabolicRate(Person person) throws Exception {
+	public double basalMetabolicRate(Person person) throws Exception {
 		float height = person.height();
 		Gender gender = person.gender();
 		float weight = person.weight();
@@ -49,7 +50,7 @@ public class Proxy implements MetabolicMetrics, HealthStats {
 			numM++;
 		}
 
-		float bmr = calc.basalMetabolicRate(person);
+		double bmr = calc.basalMetabolicRate(person);
 		BMRs += bmr;
 		return bmr;
 	}
