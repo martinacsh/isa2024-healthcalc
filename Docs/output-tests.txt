@@ -1,0 +1,441 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------------< uma.isa:HealthCalc >-------------------------
+[INFO] Building HealthCalc 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ HealthCalc ---
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ HealthCalc ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ HealthCalc ---
+[INFO] Copying 2 resources from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ HealthCalc ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ HealthCalc ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running runCucumber.RunCucumberTest
+
+@IdealWeight @tag1
+Scenario Outline: Invalid gender                                 # feature/IdealWeight.feature:30
+  Given I use a health calculator                                # runCucumber.StepDefinition.i_use_a_health_calculator()
+  When I calculate the ideal weight with an incorrect gender "y" # runCucumber.StepDefinition.i_calculate_the_ideal_weight_with_an_incorrect_gender(java.lang.String)
+  Then the program throws an exception                           # runCucumber.StepDefinition.the_program_throws_an_exception()
+
+@IdealWeight @tag1
+Scenario Outline: Invalid gender                                 # feature/IdealWeight.feature:31
+  Given I use a health calculator                                # runCucumber.StepDefinition.i_use_a_health_calculator()
+  When I calculate the ideal weight with an incorrect gender "_" # runCucumber.StepDefinition.i_calculate_the_ideal_weight_with_an_incorrect_gender(java.lang.String)
+  Then the program throws an exception                           # runCucumber.StepDefinition.the_program_throws_an_exception()
+
+@IdealWeight @tag1
+Scenario Outline: Invalid gender                                 # feature/IdealWeight.feature:32
+  Given I use a health calculator                                # runCucumber.StepDefinition.i_use_a_health_calculator()
+  When I calculate the ideal weight with an incorrect gender "9" # runCucumber.StepDefinition.i_calculate_the_ideal_weight_with_an_incorrect_gender(java.lang.String)
+  Then the program throws an exception                           # runCucumber.StepDefinition.the_program_throws_an_exception()
+
+@IdealWeight @tag2
+Scenario: Invalid height                                        # feature/IdealWeight.feature:42
+  Given I use a health calculator                               # runCucumber.StepDefinition.i_use_a_health_calculator()
+  When I calculate the ideal weight with an incorrect height -3 # runCucumber.StepDefinition.i_calculate_the_ideal_weight_with_an_incorrect_height(java.lang.Integer)
+  Then the program throws an exception                          # runCucumber.StepDefinition.the_program_throws_an_exception()
+
+@IdealWeight @tag2
+Scenario: Invalid height                                       # feature/IdealWeight.feature:43
+  Given I use a health calculator                              # runCucumber.StepDefinition.i_use_a_health_calculator()
+  When I calculate the ideal weight with an incorrect height 0 # runCucumber.StepDefinition.i_calculate_the_ideal_weight_with_an_incorrect_height(java.lang.Integer)
+  Then the program throws an exception                         # runCucumber.StepDefinition.the_program_throws_an_exception()
+
+@IdealWeight @tag2
+Scenario: Invalid height                                          # feature/IdealWeight.feature:44
+  Given I use a health calculator                                 # runCucumber.StepDefinition.i_use_a_health_calculator()
+  When I calculate the ideal weight with an incorrect height -180 # runCucumber.StepDefinition.i_calculate_the_ideal_weight_with_an_incorrect_height(java.lang.Integer)
+  Then the program throws an exception                            # runCucumber.StepDefinition.the_program_throws_an_exception()
+
+@IdealWeight @tag3
+Scenario Outline: Negative output                                                           # feature/IdealWeight.feature:55
+  Given I use a health calculator                                                           # runCucumber.StepDefinition.i_use_a_health_calculator()
+  When I calculate the ideal weight for height 29 and gender 'w' and the output is negative # runCucumber.StepDefinition.i_calculate_the_ideal_weight_for_height_and_gender_and_the_output_is_negative(java.lang.Integer,java.lang.String)
+  Then the program throws an exception                                                      # runCucumber.StepDefinition.the_program_throws_an_exception()
+
+@IdealWeight @tag3
+Scenario Outline: Negative output                                                           # feature/IdealWeight.feature:56
+  Given I use a health calculator                                                           # runCucumber.StepDefinition.i_use_a_health_calculator()
+  When I calculate the ideal weight for height 82 and gender 'm' and the output is negative # runCucumber.StepDefinition.i_calculate_the_ideal_weight_for_height_and_gender_and_the_output_is_negative(java.lang.Integer,java.lang.String)
+  Then the program throws an exception                                                      # runCucumber.StepDefinition.the_program_throws_an_exception()
+
+@IdealWeight @tag3
+Scenario Outline: Negative output                                                           # feature/IdealWeight.feature:57
+  Given I use a health calculator                                                           # runCucumber.StepDefinition.i_use_a_health_calculator()
+  When I calculate the ideal weight for height 39 and gender 'm' and the output is negative # runCucumber.StepDefinition.i_calculate_the_ideal_weight_for_height_and_gender_and_the_output_is_negative(java.lang.Integer,java.lang.String)
+  Then the program throws an exception                                                      # runCucumber.StepDefinition.the_program_throws_an_exception()
+
+@IdealWeight @tag3
+Scenario Outline: Negative output                                                           # feature/IdealWeight.feature:58
+  Given I use a health calculator                                                           # runCucumber.StepDefinition.i_use_a_health_calculator()
+  When I calculate the ideal weight for height 66 and gender 'w' and the output is negative # runCucumber.StepDefinition.i_calculate_the_ideal_weight_for_height_and_gender_and_the_output_is_negative(java.lang.Integer,java.lang.String)
+  Then the program throws an exception                                                      # runCucumber.StepDefinition.the_program_throws_an_exception()
+
+@IdealWeight @tag5
+Scenario Outline: valid arguments                                 # feature/IdealWeight.feature:69
+  Given I use a health calculator                                 # runCucumber.StepDefinition.i_use_a_health_calculator()
+  When I calculate the ideal weight for height 173 and gender 'w' # runCucumber.StepDefinition.i_calculate_the_ideal_weight_for_height_and_gender(java.lang.Integer,java.lang.String)
+  Then the program provides an appropiate output '63.8'           # runCucumber.StepDefinition.the_program_provides_an_appropiate_output(java.lang.String)
+
+@IdealWeight @tag5
+Scenario Outline: valid arguments                                 # feature/IdealWeight.feature:70
+  Given I use a health calculator                                 # runCucumber.StepDefinition.i_use_a_health_calculator()
+  When I calculate the ideal weight for height 169 and gender 'm' # runCucumber.StepDefinition.i_calculate_the_ideal_weight_for_height_and_gender(java.lang.Integer,java.lang.String)
+  Then the program provides an appropiate output '64.25'          # runCucumber.StepDefinition.the_program_provides_an_appropiate_output(java.lang.String)
+
+@IdealWeight @tag5
+Scenario Outline: valid arguments                                 # feature/IdealWeight.feature:71
+  Given I use a health calculator                                 # runCucumber.StepDefinition.i_use_a_health_calculator()
+  When I calculate the ideal weight for height 183 and gender 'm' # runCucumber.StepDefinition.i_calculate_the_ideal_weight_for_height_and_gender(java.lang.Integer,java.lang.String)
+  Then the program provides an appropiate output '74.75'          # runCucumber.StepDefinition.the_program_provides_an_appropiate_output(java.lang.String)
+
+@IdealWeight @tag5
+Scenario Outline: valid arguments                                 # feature/IdealWeight.feature:72
+  Given I use a health calculator                                 # runCucumber.StepDefinition.i_use_a_health_calculator()
+  When I calculate the ideal weight for height 150 and gender 'w' # runCucumber.StepDefinition.i_calculate_the_ideal_weight_for_height_and_gender(java.lang.Integer,java.lang.String)
+  Then the program provides an appropiate output '50'             # runCucumber.StepDefinition.the_program_provides_an_appropiate_output(java.lang.String)
+
+@BasalMR @tag1
+Scenario Outline: Invalid gender                                         # feature/basalMR.feature:30
+  Given I use a health calculator                                        # runCucumber.StepDefinition.i_use_a_health_calculator()
+  When I calculate the basal metabolic rate with an incorrect gender "4" # runCucumber.StepDefinition.i_calculate_the_basal_metabolic_rate_with_an_incorrect_gender(java.lang.String)
+  Then the program throws an exception                                   # runCucumber.StepDefinition.the_program_throws_an_exception()
+
+@BasalMR @tag1
+Scenario Outline: Invalid gender                                         # feature/basalMR.feature:31
+  Given I use a health calculator                                        # runCucumber.StepDefinition.i_use_a_health_calculator()
+  When I calculate the basal metabolic rate with an incorrect gender "s" # runCucumber.StepDefinition.i_calculate_the_basal_metabolic_rate_with_an_incorrect_gender(java.lang.String)
+  Then the program throws an exception                                   # runCucumber.StepDefinition.the_program_throws_an_exception()
+
+@BasalMR @tag1
+Scenario Outline: Invalid gender                                         # feature/basalMR.feature:32
+  Given I use a health calculator                                        # runCucumber.StepDefinition.i_use_a_health_calculator()
+  When I calculate the basal metabolic rate with an incorrect gender "." # runCucumber.StepDefinition.i_calculate_the_basal_metabolic_rate_with_an_incorrect_gender(java.lang.String)
+  Then the program throws an exception                                   # runCucumber.StepDefinition.the_program_throws_an_exception()
+
+@BasalMR @tag2
+Scenario: Invalid height                                                # feature/basalMR.feature:42
+  Given I use a health calculator                                       # runCucumber.StepDefinition.i_use_a_health_calculator()
+  When I calculate the basal metabolic rate with an incorrect height -3 # runCucumber.StepDefinition.i_calculate_the_basal_metabolic_rate_with_an_incorrect_height(java.lang.Integer)
+  Then the program throws an exception                                  # runCucumber.StepDefinition.the_program_throws_an_exception()
+
+@BasalMR @tag2
+Scenario: Invalid height                                               # feature/basalMR.feature:43
+  Given I use a health calculator                                      # runCucumber.StepDefinition.i_use_a_health_calculator()
+  When I calculate the basal metabolic rate with an incorrect height 0 # runCucumber.StepDefinition.i_calculate_the_basal_metabolic_rate_with_an_incorrect_height(java.lang.Integer)
+  Then the program throws an exception                                 # runCucumber.StepDefinition.the_program_throws_an_exception()
+
+@BasalMR @tag2
+Scenario: Invalid height                                                  # feature/basalMR.feature:44
+  Given I use a health calculator                                         # runCucumber.StepDefinition.i_use_a_health_calculator()
+  When I calculate the basal metabolic rate with an incorrect height -173 # runCucumber.StepDefinition.i_calculate_the_basal_metabolic_rate_with_an_incorrect_height(java.lang.Integer)
+  Then the program throws an exception                                    # runCucumber.StepDefinition.the_program_throws_an_exception()
+
+@BasalMR @tag3
+Scenario: Invalid weight                                                 # feature/basalMR.feature:53
+  Given I use a health calculator                                        # runCucumber.StepDefinition.i_use_a_health_calculator()
+  When I calculate the basal metabolic rate with an incorrect weight -15 # runCucumber.StepDefinition.i_calculate_the_basal_metabolic_rate_with_an_incorrect_weight(java.lang.Integer)
+  Then the program throws an exception                                   # runCucumber.StepDefinition.the_program_throws_an_exception()
+
+@BasalMR @tag3
+Scenario: Invalid weight                                               # feature/basalMR.feature:54
+  Given I use a health calculator                                      # runCucumber.StepDefinition.i_use_a_health_calculator()
+  When I calculate the basal metabolic rate with an incorrect weight 0 # runCucumber.StepDefinition.i_calculate_the_basal_metabolic_rate_with_an_incorrect_weight(java.lang.Integer)
+  Then the program throws an exception                                 # runCucumber.StepDefinition.the_program_throws_an_exception()
+
+@BasalMR @tag3
+Scenario: Invalid weight                                                 # feature/basalMR.feature:55
+  Given I use a health calculator                                        # runCucumber.StepDefinition.i_use_a_health_calculator()
+  When I calculate the basal metabolic rate with an incorrect weight -70 # runCucumber.StepDefinition.i_calculate_the_basal_metabolic_rate_with_an_incorrect_weight(java.lang.Integer)
+  Then the program throws an exception                                   # runCucumber.StepDefinition.the_program_throws_an_exception()
+
+@BasalMR @tag4
+Scenario Outline: Invalid Age                                                  # feature/basalMR.feature:65
+  Given I use a health calculator                                              # runCucumber.StepDefinition.i_use_a_health_calculator()
+  When I calculate the basal metabolic rate for an age with negative value -34 # runCucumber.StepDefinition.i_calculate_the_basal_metabolic_rate_for_an_age_with_negative_value(java.lang.Integer)
+  Then the system throws an exception                                          # runCucumber.StepDefinition.the_system_throws_an_exception()
+
+@BasalMR @tag4
+Scenario Outline: Invalid Age                                                 # feature/basalMR.feature:66
+  Given I use a health calculator                                             # runCucumber.StepDefinition.i_use_a_health_calculator()
+  When I calculate the basal metabolic rate for an age with negative value -1 # runCucumber.StepDefinition.i_calculate_the_basal_metabolic_rate_for_an_age_with_negative_value(java.lang.Integer)
+  Then the system throws an exception                                         # runCucumber.StepDefinition.the_system_throws_an_exception()
+
+@BasalMR @tag4
+Scenario Outline: Invalid Age                                                  # feature/basalMR.feature:67
+  Given I use a health calculator                                              # runCucumber.StepDefinition.i_use_a_health_calculator()
+  When I calculate the basal metabolic rate for an age with negative value -69 # runCucumber.StepDefinition.i_calculate_the_basal_metabolic_rate_for_an_age_with_negative_value(java.lang.Integer)
+  Then the system throws an exception                                          # runCucumber.StepDefinition.the_system_throws_an_exception()
+
+@BasalMR @tag5
+Scenario Outline: valid arguments                                                          # feature/basalMR.feature:78
+  Given I use a health calculator                                                          # runCucumber.StepDefinition.i_use_a_health_calculator()
+  When I calculate the basal metabolic rate for weight 60 height 173 gender 'w' and age 21 # runCucumber.StepDefinition.i_calculate_the_basal_metabolic_rate_for_weight_height_gender_and_age(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.Integer)
+  Then the program provides appropiate results '1415.25'                                   # runCucumber.StepDefinition.the_program_provides_appropiate_results(java.lang.String)
+
+@BasalMR @tag5
+Scenario Outline: valid arguments                                                          # feature/basalMR.feature:79
+  Given I use a health calculator                                                          # runCucumber.StepDefinition.i_use_a_health_calculator()
+  When I calculate the basal metabolic rate for weight 59 height 169 gender 'm' and age 18 # runCucumber.StepDefinition.i_calculate_the_basal_metabolic_rate_for_weight_height_gender_and_age(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.Integer)
+  Then the program provides appropiate results '1561.25'                                   # runCucumber.StepDefinition.the_program_provides_appropiate_results(java.lang.String)
+
+@BasalMR @tag5
+Scenario Outline: valid arguments                                                          # feature/basalMR.feature:80
+  Given I use a health calculator                                                          # runCucumber.StepDefinition.i_use_a_health_calculator()
+  When I calculate the basal metabolic rate for weight 78 height 183 gender 'm' and age 74 # runCucumber.StepDefinition.i_calculate_the_basal_metabolic_rate_for_weight_height_gender_and_age(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.Integer)
+  Then the program provides appropiate results '1558.75'                                   # runCucumber.StepDefinition.the_program_provides_appropiate_results(java.lang.String)
+
+@BasalMR @tag5
+Scenario Outline: valid arguments                                                          # feature/basalMR.feature:81
+  Given I use a health calculator                                                          # runCucumber.StepDefinition.i_use_a_health_calculator()
+  When I calculate the basal metabolic rate for weight 40 height 150 gender 'w' and age 30 # runCucumber.StepDefinition.i_calculate_the_basal_metabolic_rate_for_weight_height_gender_and_age(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.Integer)
+  Then the program provides appropiate results '1026.5'                                    # runCucumber.StepDefinition.the_program_provides_appropiate_results(java.lang.String)
+[INFO] Tests run: 30, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.325 s -- in runCucumber.RunCucumberTest
+[INFO] Running healthcalc.HealthCalcTest
+[ERROR] Tests run: 50, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 0.227 s <<< FAILURE! -- in healthcalc.HealthCalcTest
+[ERROR] healthcalc.HealthCalcTest.test5_idealWeight_above150(int, char)[1] -- Time elapsed: 0.006 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception thrown: org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertDoesNotThrow.createAssertionFailedError(AssertDoesNotThrow.java:84)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:53)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:36)
+	at org.junit.jupiter.api.Assertions.assertDoesNotThrow(Assertions.java:3168)
+	at healthcalc.HealthCalcTest.test5_idealWeight_above150(HealthCalcTest.java:69)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:183)
+	at healthcalc.HealthCalcTest.lambda$4(HealthCalcTest.java:71)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:49)
+	... 35 more
+
+[ERROR] healthcalc.HealthCalcTest.test5_idealWeight_above150(int, char)[2] -- Time elapsed: 0.002 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception thrown: org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertDoesNotThrow.createAssertionFailedError(AssertDoesNotThrow.java:84)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:53)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:36)
+	at org.junit.jupiter.api.Assertions.assertDoesNotThrow(Assertions.java:3168)
+	at healthcalc.HealthCalcTest.test5_idealWeight_above150(HealthCalcTest.java:69)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:183)
+	at healthcalc.HealthCalcTest.lambda$4(HealthCalcTest.java:71)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:49)
+	... 35 more
+
+[ERROR] healthcalc.HealthCalcTest.test5_idealWeight_above150(int, char)[3] -- Time elapsed: 0.001 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception thrown: org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertDoesNotThrow.createAssertionFailedError(AssertDoesNotThrow.java:84)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:53)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:36)
+	at org.junit.jupiter.api.Assertions.assertDoesNotThrow(Assertions.java:3168)
+	at healthcalc.HealthCalcTest.test5_idealWeight_above150(HealthCalcTest.java:69)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:183)
+	at healthcalc.HealthCalcTest.lambda$4(HealthCalcTest.java:71)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:49)
+	... 35 more
+
+[ERROR] healthcalc.HealthCalcTest.test5_idealWeight_above150(int, char)[4] -- Time elapsed: 0.002 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception thrown: org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertDoesNotThrow.createAssertionFailedError(AssertDoesNotThrow.java:84)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:53)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:36)
+	at org.junit.jupiter.api.Assertions.assertDoesNotThrow(Assertions.java:3168)
+	at healthcalc.HealthCalcTest.test5_idealWeight_above150(HealthCalcTest.java:69)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:183)
+	at healthcalc.HealthCalcTest.lambda$4(HealthCalcTest.java:71)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:49)
+	... 35 more
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   HealthCalcTest.test5_idealWeight_above150:69 Unexpected exception thrown: org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+[ERROR]   HealthCalcTest.test5_idealWeight_above150:69 Unexpected exception thrown: org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+[ERROR]   HealthCalcTest.test5_idealWeight_above150:69 Unexpected exception thrown: org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+[ERROR]   HealthCalcTest.test5_idealWeight_above150:69 Unexpected exception thrown: org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+[INFO] 
+[ERROR] Tests run: 80, Failures: 4, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.757 s
+[INFO] Finished at: 2024-06-05T18:52:37+02:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.2.5:test (default-test) on project HealthCalc: There are test failures.
+[ERROR] 
+[ERROR] Please refer to C:\Users\marti\OneDrive\Documentos\Eclipse\isa2024-healthcalc\target\surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

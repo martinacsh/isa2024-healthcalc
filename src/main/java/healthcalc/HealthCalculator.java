@@ -42,10 +42,10 @@ public float basalMetabolicRate(float weight, int height, char gender, int age) 
         }
 
     if(gender == 'm'){
-        resultado = 10f * (weight + 6.25f) * (height - 5) * (age + 5);
+        resultado = 10f * weight + 6.25f * height - 5 * age + 5;
     }
     if(gender == 'w'){
-        resultado = 10 * weight + 6.25f * height - 5 * age - 161;
+        resultado = 10f * weight + 6.25f * height - 5 * age - 161;
         if(resultado <= 0){
             throw new Exception("El resultado es negativo. Pruebe con otros datos");
 
