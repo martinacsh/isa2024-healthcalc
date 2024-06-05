@@ -40,25 +40,25 @@ So that I can know the ideal weight that was calculated.
 
 #### Accepting Criteria
 
-Scenario Outline: Invalid gender
+##### Scenario Outline: Invalid gender
 Given I use a health calculator
 When I calculate the ideal weight with an incorrect gender
 Then the program throws an exception
 
 
-Scenario: Invalid height
+##### Scenario Outline: Invalid height
 Given I use a health calculator
 When I calculate the ideal weight with an incorrect height
 Then the program throws an exception
  
 
-Scenario Outline: Negative output
+##### Scenario Outline: Negative output
 Given I have an health calculator
 When I calculate the ideal weight for certain values height and gender, and the output is negative
 Then the program throws an exception
     
 
-Scenario Outline: valid arguments
+##### Scenario Outline: valid arguments
 Given I have an health calculator
 When I calculate the ideal weight for a certain height and gender
 Then the program provides an appropiate output
@@ -73,31 +73,31 @@ So that I can know the basal metabolic rate thet was calculated.
 
 #### Accepting Criteria
 
-Scenario Outline: Invalid gender
+##### Scenario: Invalid gender
 Given I use a health calculator
 When I calculate the basal metabolic rate with an incorrect gender
 Then the program throws an exception
 
 
-Scenario: Invalid height
+##### Scenario: Invalid height
 Given I use a health calculator
 When I calculate the basal metabolic rate with an incorrect height
 Then the program throws an exception
 
 
-Scenario: Invalid weight
+##### Scenario: Invalid weight
 Given I use a health calculator
 When I calculate the basal metabolic rate with an incorrect weight
 Then the program throws an exception      
 
 
-Scenario Outline: Invalid Age
+##### Scenario Outline: Invalid Age
 Given I use a health calculator
 When I calculate the basal metabolic rate for an age with negative value
 Then the system throws an exception
 
  
-Scenario Outline: valid arguments
+##### Scenario Outline: valid arguments
 Given I have an health calculator
 When I calculate the basal metabolic rate for certain values of height, gender, age and weight
 Then the program provides an appropiate output
