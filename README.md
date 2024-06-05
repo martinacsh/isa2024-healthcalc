@@ -30,71 +30,69 @@
 
 ![Registro commits]("C:\Users\marti\OneDrive\Documentos\Git\isa2024-healthcalc\registro_commits.png")
 
+
 ## Práctica 3: Cucumber + Maven
 
 ### User Story: Calculate Ideal Weight
 
-As a user of a health calculator
-I want to obtain the ideal weight in accordance with the provided arguments
+As a user of a health calculator  
+I want to obtain the ideal weight in accordance with the provided arguments  
 So that I can know the ideal weight that was calculated.
 
 #### Accepting Criteria
 
 ##### Scenario Outline: Invalid gender
-Given I use a health calculator
-When I calculate the ideal weight with an incorrect gender
+Given I use a health calculator  
+When I calculate the ideal weight with an incorrect gender  
 Then the program throws an exception
-
 
 ##### Scenario Outline: Invalid height
-Given I use a health calculator
-When I calculate the ideal weight with an incorrect height
+Given I use a health calculator  
+When I calculate the ideal weight with an incorrect height  
 Then the program throws an exception
- 
 
 ##### Scenario Outline: Negative output
-Given I have an health calculator
-When I calculate the ideal weight for certain values height and gender, and the output is negative
+Given I have an health calculator  
+When I calculate the ideal weight for certain values height and gender, and the output is negative  
 Then the program throws an exception
-    
 
 ##### Scenario Outline: valid arguments
-Given I have an health calculator
-When I calculate the ideal weight for a certain height and gender
+Given I have an health calculator  
+When I calculate the ideal weight for a certain height and gender  
 Then the program provides an appropiate output
-    
-
 
 ### User Story: Calculate basalMetabolicRate
 
-As a user of a health calculator
-I want to obtain the basal metabolic rate in accordance with the provided arguments
-So that I can know the basal metabolic rate thet was calculated.
+As a user of a health calculator  
+I want to obtain the basal metabolic rate in accordance with the provided arguments  
+So that I can know the basal metabolic rate that was calculated.
 
 #### Accepting Criteria
 
 ##### Scenario: Invalid gender
-Given I use a health calculator
-When I calculate the basal metabolic rate with an incorrect gender
+Given I use a health calculator  
+When I calculate the basal metabolic rate with an incorrect gender  
 Then the program throws an exception
-
 
 ##### Scenario: Invalid height
-Given I use a health calculator
-When I calculate the basal metabolic rate with an incorrect height
+Given I use a health calculator  
+When I calculate the basal metabolic rate with an incorrect height  
 Then the program throws an exception
 
-
 ##### Scenario: Invalid weight
-Given I use a health calculator
-When I calculate the basal metabolic rate with an incorrect weight
-Then the program throws an exception      
-
+Given I use a health calculator  
+When I calculate the basal metabolic rate with an incorrect weight  
+Then the program throws an exception
 
 ##### Scenario Outline: Invalid Age
-Given I use a health calculator
-When I calculate the basal metabolic rate for an age with negative value
+Given I use a health calculator  
+When I calculate the basal metabolic rate for an age with negative value  
 Then the system throws an exception
+
+##### Scenario Outline: valid arguments
+Given I have an health calculator  
+When I calculate the basal metabolic rate for certain values of height, gender, age and weight  
+Then the program provides an appropriate output
 
  
 ##### Scenario Outline: valid arguments
